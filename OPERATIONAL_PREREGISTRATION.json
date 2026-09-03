@@ -1,0 +1,85 @@
+{
+  "preregistration_version": 4,
+  "status": "frozen_before_operational_execution",
+  "purpose": "Machine-checkable operationalization of the L2 representation-revision causal burdens.",
+  "scientific_source_baseline": "df450d91d0b3acdd1c0937bd5d8b20bda98b20b4",
+  "certificate_source_state": "ce1fa3a180ff9cef30d113ce2481cf0e658bc499",
+  "certificate_path": "certificate/certificate.json",
+  "universe_policy": {
+    "source": "frozen_certificate",
+    "regeneration_during_assay": false,
+    "post_outcome_expansion": false,
+    "representation_space_completeness_claim": false
+  },
+  "causal_burdens": {
+    "C_U": {
+      "name": "certified_universe",
+      "measurement": "Verify certificate self-hash, fixture hashes, declared counts, deterministic canonical ordering, and semantic partition; expose only the literal frozen fixtures after successful verification.",
+      "acceptance_criterion": "All certificate verification predicates pass; U_syntax count is 77; U_semantic class count is 6; every syntax member occurs exactly once in exactly one semantic class.",
+      "negative_control": "Any hash mismatch, duplicate/missing syntax member, malformed AST, class overlap, class omission, count mismatch, or certificate-binding mismatch is a hard assay stop.",
+      "failure_interpretation": "The candidate universe is not certified for this run; no causal L2 claim may be made.",
+      "claim_ceiling": "Complete only with respect to the declared Boolean DSL, d=2, max_depth=2, and canonicalization policy."
+    },
+    "W": {
+      "name": "generator_change",
+      "measurement": "Compare persistent adaptive generator identity and emitted representation against the pre-trigger generator on the post-adoption evaluation interface.",
+      "acceptance_criterion": "G_adaptive = G1 and G1 != G0 by declared generator identity, with at least one generator-interface output differing from G0 on the held-out set.",
+      "negative_control": "Fixed-G shadow remains G0 under the identical future event stream.",
+      "failure_interpretation": "No evidence of generator-level change; behavioral differences cannot be attributed to L2 revision.",
+      "claim_ceiling": "Generator-level divergence only; does not establish that corrective evidence caused the divergence."
+    },
+    "C": {
+      "name": "causal_generator_selection",
+      "measurement": "Record ordered event trace: trigger discrepancy -> diagnosis -> discriminating probes/results -> unique candidate -> adoption. Candidate identity is hidden from the diagnostic evidence-generation path.",
+      "acceptance_criterion": "The observed trigger discrepancy occurs before candidate discrimination; T_t uniquely identifies G1 within the frozen universe; G1 identity is not available to T_t or o_t; adoption occurs only after the discriminating evidence is generated and evaluated.",
+      "negative_control": "A timing/leakage check fails the run if candidate identity, selected-generator metadata, or post-selection state reaches the evidence-generation path before T_t and o_t are fixed.",
+      "failure_interpretation": "Candidate selection may be contaminated by target/candidate leakage; causal attribution to the evidence is not permitted.",
+      "claim_ceiling": "Corrective evidence can causally discriminate and select a candidate within the certified finite universe."
+    },
+    "P": {
+      "name": "persistent_adoption",
+      "measurement": "Evaluate the same immutable selected GeneratorSpec across every post-adoption held-out input and record generator identity at the generator interface.",
+      "acceptance_criterion": "For every x in H_post, the adaptive branch uses G1; no later event or control path changes the selected generator identity.",
+      "negative_control": "Shadow remains G0 for every corresponding held-out input; any adaptive generator identity reversion, mutation, or unexplained replacement is a persistence failure.",
+      "failure_interpretation": "The experiment may show temporary candidate selection but not persistent generator revision.",
+      "claim_ceiling": "Persistent adoption of the selected generator; not yet an outcome-improvement claim."
+    },
+    "E": {
+      "name": "generator_specific_held_out_consequence",
+      "measurement": "Compare held-out outputs of persistent G1 against G0 shadow and against a compensation condition capable of producing the same useful behavior while retaining G0.",
+      "acceptance_criterion": "The held-out consequence is specific to G1 at the generator interface and survives both identical-input shadow control and the compensation control.",
+      "negative_control": "Compensation condition preserves G0 while attempting to reproduce the same post-trigger useful behavior; equality of outcome without G1 weakens or defeats the generator-specific interpretation.",
+      "failure_interpretation": "Observed improvement can be explained by downstream compensation or generic behavioral rescue rather than persistent representation revision.",
+      "claim_ceiling": "A persistent G1 representation produces generator-specific consequences on held-out inputs under the declared controls."
+    }
+  },
+  "hypotheses": {
+    "H_revision": "G_adaptive = G1 and G1 != G0 after corrective evidence and discriminating evidence.",
+    "H_comp": "G_adaptive = G0 while a separate compensation path K produces the relevant post-trigger behavior.",
+    "H_shadow": "G_shadow = G0 under the identical future event/evidence stream.",
+    "primary_positive_signature": "e_t -> diagnosis -> T_t -> unique G1 -> persistent adoption -> G1-specific held-out consequence"
+  },
+  "temporal_constraints": {
+    "trigger_outcome_precedes_diagnosis": true,
+    "diagnosis_precedes_follow_up": true,
+    "follow_up_precedes_adoption": true,
+    "adoption_precedes_persistence_evaluation": true,
+    "post_selection_identity_hidden_from_diagnostic_evidence": true,
+    "future_set_held_out": true
+  },
+  "control_matrix": {
+    "shadow": "same future inputs/evidence; fixed G0",
+    "compensation": "same useful target behavior pursued without changing G0",
+    "leakage_guard": "candidate identity inaccessible to trigger/outcome generation and discriminating-evidence generation",
+    "universe_guard": "no enumeration or post-outcome candidate expansion during ordinary assay execution"
+  },
+  "stop_rules": [
+    "certificate verification failure",
+    "candidate-space expansion or regeneration during assay execution",
+    "candidate identity leakage into pre-adoption evidence generation",
+    "non-unique discrimination",
+    "generator identity not persistently equal to the selected candidate",
+    "held-out adaptive/shadow event stream mismatch",
+    "compensation control reproduces the claimed consequence while G0 remains unchanged"
+  ]
+}
