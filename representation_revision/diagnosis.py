@@ -9,14 +9,17 @@ def target(state: tuple[int, ...]) -> int:
 
 
 def predicted_target(representation: Representation) -> int:
-    if len(representation.features) == 1:
-        return representation.features[0]
-    if len(representation.features) == 2:
-        x0, second = representation.features
-        # Supports both g1=(x0,x1) and g2=(x0,x0|x1).
-        inferred_x1 = second if second != (x0 | second) else second & (1 - x0)
-        return x0 ^ inferred_x1
-    raise ValueError("toy assay decoder expects one or two representation features")
+    if representation.generator_id == "g0_surface":
+        (x0,) = representation.features
+        return x0
+    if representation.generator_id == "g1_complete":
+        x0, x1 = representation.features
+        return x0 ^ x1
+    if representation.generator_id == "g2_redundant":
+        x0, combined = representation.features
+        x1 = combined & (1 - x0)
+        return x0 ^ x1
+    raise ValueError("unknown toy generator")
 
 
 def diagnose(generator: GeneratorSpec, state: tuple[int, ...], observed_outcome: int, evidence=()) -> Diagnosis:
@@ -29,5 +32,5 @@ def diagnose(generator: GeneratorSpec, state: tuple[int, ...], observed_outcome:
         )
     return Diagnosis(
         "not-evaluable",
-        "The current representation is not implicated by the observed trigger event.",
+        "The current generator is not implicated by the observed trigger event.",
     )
