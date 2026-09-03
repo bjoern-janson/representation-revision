@@ -1,0 +1,74 @@
+{
+  "protocol_version": 1,
+  "status": "frozen_before_robustness_execution",
+  "parent_assay": "representational-accessibility-v1",
+  "scientific_source_baseline": "df450d91d0b3acdd1c0937bd5d8b20bda98b20b4",
+  "question": "Does semantic-equivalent separation persist across independently justified resistance constructions?",
+  "universe": {
+    "source": "certificate/U_syntax.json plus certificate/U_semantic.json",
+    "runtime_enumeration": false,
+    "syntax_count": 77,
+    "semantic_class_count": 6,
+    "post_observation_expansion": false
+  },
+  "pair_definition": "unordered pairs within each verified semantic class",
+  "primary_analysis": {
+    "object": "full outgoing resistance profile",
+    "separating_set": "S_k_profile = {{i,j}: semantic_equivalent(i,j) and R_k(i,.) != R_k(j,.)}",
+    "required_outputs": ["|S_k_profile|", "|S_i_profile intersection S_j_profile|", "Jaccard profile matrix"]
+  },
+  "secondary_analysis": {
+    "threshold": 3,
+    "object": "thresholded outgoing reachable set",
+    "separating_set": "S_k_reach(tau) = {{i,j}: semantic_equivalent(i,j) and A_i^k(tau) != A_j^k(tau)}",
+    "required_outputs": ["|S_k_reach|", "|S_i_reach intersection S_j_reach|", "Jaccard reach matrix"]
+  },
+  "resistance_families": [
+    {
+      "id": "R_v1",
+      "rationale": "Preserve the already-frozen v1 structural convention so robustness is tested against the originally observed phenomenon.",
+      "formal_rule": "Recursive canonical AST alignment; operator substitution 1; input-index substitution 1; subtree deletion 1 per node; subtree insertion 2 per node; root kind/arity change is delete-plus-insert.",
+      "parameters": {"operator_substitution_cost": 1, "input_index_substitution_cost": 1, "node_deletion_cost": 1, "node_insertion_cost": 2},
+      "implementation": "representation_revision.accessibility.resistance"
+    },
+    {
+      "id": "R_unit",
+      "rationale": "Use a conventional unweighted edit interpretation in which each primitive structural edit has equal unit cost and direction is not privileged by asymmetric insertion/deletion pricing.",
+      "formal_rule": "Recursive canonical AST alignment; operator substitution 1; input-index substitution 1; subtree deletion 1 per node; subtree insertion 1 per node; root kind/arity change is delete-plus-insert.",
+      "parameters": {"operator_substitution_cost": 1, "input_index_substitution_cost": 1, "node_deletion_cost": 1, "node_insertion_cost": 1},
+      "implementation": "representation_revision.resistance_robustness.unit_resistance"
+    },
+    {
+      "id": "R_depth",
+      "rationale": "Treat representational edits as hierarchy-sensitive: edits at deeper AST levels carry larger local cost because they modify increasingly committed structural detail. This is a distinct weighting principle rather than a change to the v1 insertion/deletion ratio.",
+      "formal_rule": "Recursive canonical AST alignment with operation and input-index substitution cost depth+1, and node deletion/insertion cost depth+1 for each subtree node at relative depth; root kind/arity change is weighted delete-plus-insert.",
+      "parameters": {"depth_origin": 0, "weight": "depth+1"},
+      "implementation": "representation_revision.resistance_robustness.depth_resistance"
+    }
+  ],
+  "independence_rule": "Families are counted as distinct robustness constructions only when their rationale and cost rule differ materially; parameter-only perturbations of one family are not additional robustness witnesses.",
+  "analysis_order": [
+    "freeze all family rationales, rules, parameters, and implementation",
+    "verify and load literal certified fixtures",
+    "compute full outgoing profiles for every family",
+    "derive S_k_profile within verified semantic classes",
+    "derive A_i^k(tau=3)",
+    "derive S_k_reach",
+    "compute pairwise intersections and Jaccard matrices",
+    "interpret only after all calculations complete"
+  ],
+  "exclusions": [
+    "future prediction",
+    "causal correction",
+    "agent learning",
+    "candidate-space expansion",
+    "representation-space completeness",
+    "claim that any resistance family is intrinsic or uniquely correct"
+  ],
+  "interpretation": {
+    "high_stability": "Repeated separation of the same semantic-equivalent pairs across materially distinct resistance constructions weakens the explanation that the v1 phenomenon is specific to one arbitrary cost convention.",
+    "low_stability": "Low overlap indicates that transition structure depends materially on the chosen resistance convention; this is itself an empirical result and is not treated as assay failure.",
+    "invariance_restored": "A family with little or no separation shows that semantic invariance can be restored under that alternative construction."
+  },
+  "claim_ceiling": "The robustness assay can establish cross-convention stability or dependence of semantic-equivalent transition separation within the certified finite universe. It cannot establish intrinsic geometry, future predictive value, behavioral causality, or completeness of the representation space."
+}
