@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software or its empirical assays in your research, please cite this repository."
+title: "Representation Revision"
+type: software
+authors:
+  - family-names: Janson
+    given-names: Björn
+repository-code: "https://github.com/bjoern-janson/representation-revision"
+url: "https://github.com/bjoern-janson/representation-revision"
+license: MIT
+version: "0.1.0"
+date-released: "2026-09-03"
