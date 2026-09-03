@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import math
 
 from boolean_world.ast import parse_canonical
 from certificate.verify import load_verified_universe
@@ -49,4 +50,9 @@ def test_recorded_threshold_reachability_summary_is_reproducible():
 
     assert min(sizes) == record["threshold_reachability"]["min_size"]
     assert max(sizes) == record["threshold_reachability"]["max_size"]
-    assert sum(sizes) / len(sizes) == record["threshold_reachability"]["mean_size"]
+    assert math.isclose(
+        sum(sizes) / len(sizes),
+        record["threshold_reachability"]["mean_size"],
+        rel_tol=0.0,
+        abs_tol=1e-12,
+    )
