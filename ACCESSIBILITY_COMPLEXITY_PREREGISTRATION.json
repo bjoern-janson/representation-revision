@@ -1,0 +1,93 @@
+{
+  "protocol_version": 1,
+  "status": "frozen_before_complexity_control_execution",
+  "parent_assay": "resistance-robustness-v1",
+  "scientific_source_baseline": "2807014156e50b86748750c258ebe400345621c9",
+  "question": "Within the certified finite Boolean universe, are semantic-equivalent transition-geometry differences fully explained by the declared structural-complexity covariates?",
+  "scope": {
+    "future_data_access": false,
+    "temporal_organization": false,
+    "prediction": false,
+    "causal_correction": false,
+    "candidate_space_expansion": false,
+    "representation_space_completeness": false
+  },
+  "universe": {
+    "source": "certificate/U_syntax.json plus certificate/U_semantic.json",
+    "runtime_enumeration": false,
+    "syntax_count": 77,
+    "semantic_class_count": 6,
+    "post_observation_expansion": false,
+    "pair_universe": "all unordered nonidentical syntax pairs"
+  },
+  "semantic_pair_definition": "unordered pairs within each verified semantic class",
+  "complexity_vector": {
+    "notation": "z(G)",
+    "components": [
+      "AST node count",
+      "AST maximum depth in edges from root",
+      "INPUT node count",
+      "NOT node count",
+      "AND node count",
+      "OR node count",
+      "XOR node count",
+      "EQ node count",
+      "NEQ node count"
+    ],
+    "orientation_rule": "pairwise controls use componentwise absolute difference |z(G_i)-z(G_j)|, so unordered-pair results are not dependent on pair ordering"
+  },
+  "primary_geometry_measure": {
+    "name": "profile_hamming_divergence",
+    "definition": "D_k(i,j) = number of universe destinations r for which R_k(G_i,G_r) != R_k(G_j,G_r)",
+    "range": "0 through 77",
+    "zero_interpretation": "equal full outgoing resistance profiles",
+    "positive_interpretation": "distinct full outgoing resistance profiles"
+  },
+  "secondary_geometry_measure": {
+    "name": "profile_l1_divergence",
+    "definition": "L_k(i,j) = sum over destinations r of |R_k(G_i,G_r)-R_k(G_j,G_r)|",
+    "role": "magnitude sensitivity check; it is not used to define the primary matched-stratum decision"
+  },
+  "exact_conditioning": {
+    "stratum_key": "absolute pairwise complexity-difference vector |Delta z_ij|",
+    "within_stratum_test": "Among semantic-equivalent pairs sharing an exact stratum key, check whether D_k is constant.",
+    "matched_definition": "A semantic-equivalent pair is matched when its exact stratum contains at least two semantic-equivalent pairs.",
+    "nonconstant_definition": "A semantic stratum is nonconstant for family k when its member pairs have more than one distinct D_k value.",
+    "claim_logic": "If at least one exact semantic stratum is nonconstant, D_k is not a deterministic function of the declared pairwise complexity-difference vector alone within the semantic-equivalent pair set. This is the finite confound-exclusion result; it is not evidence for intrinsic geometry."
+  },
+  "required_outputs_per_resistance_family": [
+    "N_eligible",
+    "N_matched",
+    "N_separated",
+    "number of exact semantic strata",
+    "number of matched semantic strata",
+    "number of nonconstant matched semantic strata",
+    "number of matched pairs participating in nonconstant strata",
+    "minimum, maximum, and mean D_k among matched pairs",
+    "minimum, maximum, and mean profile L1 divergence among matched pairs"
+  ],
+  "counts": {
+    "N_eligible": "all semantic-equivalent unordered pairs (expected finite universe count, not inferred from outcome)",
+    "N_matched": "eligible semantic-equivalent pairs in strata containing at least two semantic-equivalent pairs",
+    "N_separated": "matched semantic-equivalent pairs with D_k > 0"
+  },
+  "analysis_order": [
+    "freeze this preregistration",
+    "load literal verified certificate fixtures",
+    "construct z(G) for every syntax member",
+    "construct exact absolute pairwise complexity-difference strata",
+    "compute all three resistance-family full profiles",
+    "compute D_k and profile L1 divergence for every pair",
+    "restrict the primary within-stratum analysis to semantic-equivalent pairs",
+    "derive N_eligible, N_matched, N_separated and stratum diagnostics",
+    "interpret only after all calculations complete"
+  ],
+  "no_post_hoc_controls": true,
+  "interpretation": {
+    "positive_control_exclusion": "At least one nonconstant exact semantic stratum shows that the declared structural-complexity vector is insufficient to determine geometry-divergence magnitude even after exact conditioning within semantic-equivalent pairs.",
+    "null": "For a resistance family, D_k is constant within every semantic-equivalent exact complexity-difference stratum, so the tested complexity-difference control is sufficient to determine D_k within that restricted finite comparison.",
+    "important_limit": "A positive result does not show that semantic identity itself causes geometry differences, does not establish a deeper ontology, and does not establish intrinsic or uniquely correct geometry. It only excludes sufficiency of the declared pairwise structural-complexity control for the measured geometry-divergence quantity.",
+    "sample_size_guard": "Exact pair and stratum counts must be reported so any residual finding can be evaluated for breadth rather than inferred from a hidden or vanishing comparison set."
+  },
+  "claim_ceiling": "Within the certified finite universe and the preregistered resistance families, the assay can exclude or fail to exclude a declared structural-complexity explanation for the measured magnitude of outgoing-profile divergence. It cannot establish intrinsic representational geometry, semantic causality, future predictive value, behavioral consequences, temporal organization, or representation-space completeness."
+}
