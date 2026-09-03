@@ -1,0 +1,7 @@
+scientific_source_sha=0eead840a1fc2f5de96d809b5e7b45ee14f7d726
+workflow_repository_sha=47e432817f1e7791d70e16cc08263bd28f583151
+repository=bjoern-janson/representation-revision
+ref=refs/heads/main
+run_id=33775722525
+run_attempt=1
+workflow=v3 custody run
