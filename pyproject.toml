@@ -5,8 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "representation-revision"
 version = "0.1.0"
-description = "Minimal isolated L2 representation-generator revision assay"
+description = "Certified finite representation-revision assays, accessibility geometry controls, and provenance-preserving research infrastructure"
 requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = ["boolean_world", "certificate", "representation_revision"]
+
+[tool.setuptools.package-data]
+certificate = ["*.json"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

@@ -1,0 +1,44 @@
+{
+  "protocol_version": 1,
+  "status": "frozen_before_accessibility_execution",
+  "scientific_source_baseline": "df450d91d0b3acdd1c0937bd5d8b20bda98b20b4",
+  "certificate_path": "certificate/certificate.json",
+  "universe_policy": {
+    "source": "verified_literal_certificate_fixtures",
+    "runtime_enumeration": false,
+    "post_observation_expansion": false,
+    "representation_space_completeness_claim": false
+  },
+  "resistance_spec": {
+    "operator_substitution_cost": 1,
+    "input_index_substitution_cost": 1,
+    "node_deletion_cost": 1,
+    "node_insertion_cost": 2,
+    "directionality": "source_subtree_deletion plus target_subtree_insertion when root kind or arity changes; otherwise recursive canonical-child alignment",
+    "future_data_access": false,
+    "semantic_data_access": false
+  },
+  "threshold": 3,
+  "primary_question": "For semantically equivalent representations in the certified finite universe, does semantic equivalence imply equivalence of transition geometry?",
+  "null": "semantic equivalence implies equal full outgoing resistance profiles",
+  "alternative": "there exists a semantically equivalent pair with unequal outgoing resistance profiles",
+  "secondary_observation": "there exists a semantically equivalent pair with different thresholded reachable sets",
+  "required_order": [
+    "freeze resistance specification",
+    "freeze threshold",
+    "verify literal certificate fixtures",
+    "compute full resistance profiles",
+    "derive thresholded reachable sets",
+    "compare within semantic classes",
+    "interpret results"
+  ],
+  "exclusions": [
+    "future prediction",
+    "causal correction",
+    "agent learning",
+    "open-ended representation discovery",
+    "representation-space completeness",
+    "claim that the resistance relation is intrinsic or uniquely correct"
+  ],
+  "claim_ceiling": "A positive result supports only that semantic identity does not necessarily determine transition accessibility under this frozen structural resistance relation."
+}

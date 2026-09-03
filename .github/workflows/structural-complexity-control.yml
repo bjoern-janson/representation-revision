@@ -1,0 +1,22 @@
+name: historical structural-complexity-control reproduction
+
+on:
+  workflow_dispatch:
+
+jobs:
+  assay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frozen v3 scientific source
+        uses: actions/checkout@v4
+        with:
+          ref: 0eead840a1fc2f5de96d809b5e7b45ee14f7d726
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade pip
+      - run: pip install pytest .
+      - run: python -m pytest
+      - run: python scripts/run_structural_complexity_control.py > structural_complexity_control_output.json
+      - run: cat structural_complexity_control_output.json
+      - run: sha256sum structural_complexity_control_output.json

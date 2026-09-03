@@ -1,0 +1,22 @@
+name: historical resistance-robustness reproduction
+
+on:
+  workflow_dispatch:
+
+jobs:
+  robustness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frozen v2 branch state
+        uses: actions/checkout@v4
+        with:
+          ref: 2807014156e50b86748750c258ebe400345621c9
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install pytest
+      - run: python -m pip install -e .
+      - run: python -m pytest
+      - run: python scripts/run_resistance_robustness.py > resistance_robustness_output.json
+      - run: cat resistance_robustness_output.json
