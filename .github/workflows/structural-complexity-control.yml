@@ -1,0 +1,25 @@
+name: structural-complexity-control
+
+on:
+  push:
+    branches:
+      - freeze-structural-complexity-control-v1
+  pull_request:
+    branches:
+      - main
+      - freeze-structural-complexity-control-v1
+
+jobs:
+  assay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade pip
+      - run: pip install pytest .
+      - run: python -m pytest
+      - run: python scripts/run_structural_complexity_control.py > structural_complexity_control_output.json
+      - run: cat structural_complexity_control_output.json
+      - run: sha256sum structural_complexity_control_output.json
