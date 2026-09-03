@@ -1,0 +1,138 @@
+{
+  "execution_version": 1,
+  "status": "executed",
+  "preregistration": {
+    "path": "ACCESSIBILITY_PREREGISTRATION.json",
+    "protocol_version": 1,
+    "threshold": 3
+  },
+  "universe": {
+    "source": "certificate/U_syntax.json",
+    "syntax_count": 77,
+    "semantic_class_count": 6,
+    "U_syntax_sha256": "f2bffff668aea000b5810e4a4ef90dd67f03e549e146623f47e25dc0240666af"
+  },
+  "resistance_spec": {
+    "operator_substitution_cost": 1,
+    "input_index_substitution_cost": 1,
+    "node_deletion_cost": 1,
+    "node_insertion_cost": 2
+  },
+  "pair_space": {
+    "ordered_nonidentical_pairs": 5852,
+    "asymmetric_ordered_pairs": 1884,
+    "asymmetry_fraction": 0.3219412166780588,
+    "semantic_equivalent_pairs": 759,
+    "within_semantic_profile_divergence_pairs": 759,
+    "within_semantic_reachability_divergence_pairs": 755,
+    "within_semantic_reachability_equal_but_profile_different_pairs": 4
+  },
+  "threshold_reachability": {
+    "tau": 3,
+    "min_size": 2,
+    "max_size": 51,
+    "mean_size": 31.64935064935065
+  },
+  "class_summary": [
+    {
+      "semantic_signature": "0000",
+      "member_count": 27,
+      "pair_count": 351,
+      "profile_divergence_pairs": 351,
+      "reachability_divergence_pairs": 349
+    },
+    {
+      "semantic_signature": "0011",
+      "member_count": 1,
+      "pair_count": 0,
+      "profile_divergence_pairs": 0,
+      "reachability_divergence_pairs": 0
+    },
+    {
+      "semantic_signature": "0101",
+      "member_count": 1,
+      "pair_count": 0,
+      "profile_divergence_pairs": 0,
+      "reachability_divergence_pairs": 0
+    },
+    {
+      "semantic_signature": "0110",
+      "member_count": 12,
+      "pair_count": 66,
+      "profile_divergence_pairs": 66,
+      "reachability_divergence_pairs": 66
+    },
+    {
+      "semantic_signature": "1001",
+      "member_count": 12,
+      "pair_count": 66,
+      "profile_divergence_pairs": 66,
+      "reachability_divergence_pairs": 66
+    },
+    {
+      "semantic_signature": "1111",
+      "member_count": 24,
+      "pair_count": 276,
+      "profile_divergence_pairs": 276,
+      "reachability_divergence_pairs": 274
+    }
+  ],
+  "witnesses": {
+    "profile_and_reachability_divergence": [
+      {
+        "left": "AND(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(0)))",
+        "right": "AND(EQ(INPUT(0),INPUT(0)),EQ(INPUT(1),INPUT(1)))",
+        "semantic_signature": "1111"
+      },
+      {
+        "left": "AND(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(0)))",
+        "right": "AND(EQ(INPUT(1),INPUT(1)),EQ(INPUT(1),INPUT(1)))",
+        "semantic_signature": "1111"
+      },
+      {
+        "left": "AND(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(1)))",
+        "right": "AND(EQ(INPUT(0),INPUT(1)),EQ(INPUT(0),INPUT(1)))",
+        "semantic_signature": "1001"
+      }
+    ],
+    "profile_divergence_without_threshold_reachability_divergence": [
+      {
+        "left": "EQ(INPUT(0),INPUT(0))",
+        "right": "EQ(INPUT(1),INPUT(1))",
+        "semantic_signature": "1111"
+      },
+      {
+        "left": "NOT(NEQ(INPUT(0),INPUT(0)))",
+        "right": "NOT(NEQ(INPUT(1),INPUT(1)))",
+        "semantic_signature": "1111"
+      },
+      {
+        "left": "NEQ(INPUT(0),INPUT(0))",
+        "right": "NEQ(INPUT(1),INPUT(1))",
+        "semantic_signature": "0000"
+      },
+      {
+        "left": "NOT(EQ(INPUT(0),INPUT(0)))",
+        "right": "NOT(EQ(INPUT(1),INPUT(1)))",
+        "semantic_signature": "0000"
+      }
+    ]
+  },
+  "claim": {
+    "outcome": "ALTERNATIVE_SUPPORTED",
+    "statement": "Within the certified finite Boolean universe, semantic equivalence does not imply equivalence of outgoing transition geometry under the preregistered structural resistance relation.",
+    "stronger_secondary": "At tau=3, semantically equivalent representations can also have different thresholded reachable sets.",
+    "not_established": [
+      "resistance relation is intrinsic or uniquely correct",
+      "accessibility predicts future outcomes",
+      "accessibility causes behavior",
+      "open-ended representation discovery",
+      "completeness over representation space"
+    ]
+  },
+  "implementation": {
+    "accessibility_module_blob_sha1": "0f15545056800775d1be1d0b412cbb153c4c3089",
+    "certificate_source_commit": "df450d91d0b3acdd1c0937bd5d8b20bda98b20b4",
+    "execution_environment": "Python 3.13.5"
+  }
+}
