@@ -1,19 +1,19 @@
-# boolean_world/semantics.py
+from __future__ import annotations
+
+import hashlib
 import itertools
-from .types import Op
+
 from .ast import Node
+from .types import Op
 
-def evaluate(node: Node, x: tuple, ctx: int = 0) -> bool:
-    """
-    Pure deterministic evaluation of a canonical AST against an input vector.
-    """
+
+def evaluate(node: Node, x: tuple[int, ...]) -> bool:
+    """Pure deterministic Boolean evaluation of a well-typed AST."""
     if node.op == Op.INPUT:
-        return bool(x[node.args[0]])
-    if node.op == Op.CTX:
-        return ctx
+        index = node.args[0]
+        return bool(x[index])
 
-    # Evaluate children recursively
-    args = [evaluate(arg, x, ctx) for arg in node.args]
+    args = [evaluate(arg, x) for arg in node.args]
 
     if node.op == Op.NOT:
         return not args[0]
@@ -28,24 +28,20 @@ def evaluate(node: Node, x: tuple, ctx: int = 0) -> bool:
     if node.op == Op.NEQ:
         return args[0] != args[1]
 
-    # For index-based relations (if implemented in the factory later)
-    if node.op == Op.BEFORE:
-        return args[0] < args[1]
-    if node.op == Op.ADJACENT:
-        return abs(args[0] - args[1]) == 1
-
     raise ValueError(f"Unknown operator in evaluation: {node.op}")
 
-def get_semantic_id(node: Node, d: int = 4, ctx_domain: tuple = (0,)) -> str:
-    """
-    Calculates the exhaustive truth table for d bits.
-    Returns a string of '0's and '1's representing the exact semantic signature.
-    """
-    results = []
-    # Iterate over all possible contexts, then all possible bit vectors
-    for c in ctx_domain:
-        for x in itertools.product([0, 1], repeat=d):
-            res = evaluate(node, x, ctx=c)
-            results.append('1' if res else '0')
 
+def semantic_signature(node: Node, d: int = 4) -> str:
+    """Return the exhaustive truth-table signature over d Boolean inputs."""
+    if d < 0:
+        raise ValueError("d must be non-negative")
+    results = []
+    for x in itertools.product((0, 1), repeat=d):
+        results.append("1" if evaluate(node, x) else "0")
     return "".join(results)
+
+
+def semantic_id(node: Node, d: int = 4) -> str:
+    """Return a stable content-derived identifier for the semantic signature."""
+    signature = semantic_signature(node, d=d).encode("ascii")
+    return hashlib.sha256(signature).hexdigest()
