@@ -9,9 +9,14 @@ def target(state: tuple[int, ...]) -> int:
 
 
 def predicted_target(representation: Representation) -> int:
-    if len(representation.features) != 1:
-        raise ValueError("toy assay decoder expects a one-feature surface representation")
-    return representation.features[0]
+    if len(representation.features) == 1:
+        return representation.features[0]
+    if len(representation.features) == 2:
+        x0, second = representation.features
+        # Supports both g1=(x0,x1) and g2=(x0,x0|x1).
+        inferred_x1 = second if second != (x0 | second) else second & (1 - x0)
+        return x0 ^ inferred_x1
+    raise ValueError("toy assay decoder expects one or two representation features")
 
 
 def diagnose(generator: GeneratorSpec, state: tuple[int, ...], observed_outcome: int, evidence=()) -> Diagnosis:
