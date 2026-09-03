@@ -39,6 +39,11 @@ main@df450d91d0b3acdd1c0937bd5d8b20bda98b20b4
 specification, reference enumerator identity, implementation manifest,
 bounded parameters, canonical ordering policy, and both frozen fixture hashes.
 
+The `certificate_hash_sha256` value is the SHA-256 digest of the canonical
+pretty-printed JSON object represented by `certificate.json` with the
+`certificate_hash_sha256` field omitted. The fixture hashes are SHA-256
+hashes of their exact UTF-8 file bytes.
+
 The authoritative consolidated baseline is `df450d91d0b3acdd1c0937bd5d8b20bda98b20b4`.
 An earlier superseded merge commit is not part of this scientific provenance
 chain and must not be treated as the certificate's source state.
