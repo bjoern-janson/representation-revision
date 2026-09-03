@@ -1,21 +1,26 @@
 {
-  "adoption": {
-    "diagnosis": "generator-failure",
-    "generator_id": "g1_complete"
-  },
+  "status": "PASS",
   "coverage": {
-    "deterministic": true,
-    "enumerated_ids": ["g0_surface", "g1_complete", "g2_redundant"],
-    "independent_of_current_generator": true,
-    "omitted_ids": [],
     "status": "certified-complete",
-    "universe_ids": ["g0_surface", "g1_complete", "g2_redundant"]
+    "universe_ids": ["g0_surface", "g1_complete", "g2_redundant"],
+    "enumerated_ids": ["g0_surface", "g1_complete", "g2_redundant"],
+    "omitted_ids": [],
+    "deterministic": true,
+    "independent_of_current_generator": true
   },
-  "coverage_ids": ["g0_surface", "g1_complete", "g2_redundant"],
   "discrimination": {
     "probes": [[1, 0, 0], [1, 1, 0]],
     "unique_candidate_id": "g1_complete"
   },
-  "status": "PASS",
-  "universe_ids": ["g0_surface", "g1_complete", "g2_redundant"]
+  "adoption": {
+    "trigger": [1, 1, 0],
+    "observed_outcome": 0,
+    "diagnosis": "generator-failure",
+    "generator_id": "g1_complete"
+  },
+  "notes": [
+    "Diagnosis consumes the observed trigger discrepancy.",
+    "Follow-up probes are entered only after generator-failure diagnosis.",
+    "No candidate-universe expansion is permitted."
+  ]
 }
