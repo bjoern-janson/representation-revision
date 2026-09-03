@@ -1,14 +1,16 @@
-name: resistance-robustness
+name: historical resistance-robustness reproduction
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   robustness:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout frozen v2 branch state
+        uses: actions/checkout@v4
+        with:
+          ref: 2807014156e50b86748750c258ebe400345621c9
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
