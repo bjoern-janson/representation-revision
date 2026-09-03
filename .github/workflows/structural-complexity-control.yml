@@ -1,19 +1,16 @@
-name: structural-complexity-control
+name: historical structural-complexity-control reproduction
 
 on:
-  push:
-    branches:
-      - freeze-structural-complexity-control-v1
-  pull_request:
-    branches:
-      - main
-      - freeze-structural-complexity-control-v1
+  workflow_dispatch:
 
 jobs:
   assay:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout frozen v3 scientific source
+        uses: actions/checkout@v4
+        with:
+          ref: 0eead840a1fc2f5de96d809b5e7b45ee14f7d726
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
