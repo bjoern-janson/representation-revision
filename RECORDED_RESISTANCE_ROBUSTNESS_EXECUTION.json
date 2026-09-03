@@ -1,0 +1,132 @@
+{
+  "protocol_version": 1,
+  "status": "executed",
+  "preregistration": "ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json",
+  "execution": {
+    "workflow": "tests",
+    "workflow_run_id": 33764556701,
+    "workflow_job_id": 100678990416,
+    "head_sha": "df7bdc7fb066c596d1944e9bd3731aefb601a43d",
+    "script": "scripts/run_resistance_robustness.py"
+  },
+  "universe": {
+    "syntax_count": 77,
+    "semantic_class_count": 6,
+    "semantic_equivalent_pairs": 759
+  },
+  "threshold": 3,
+  "families": {
+    "R_v1": {
+      "rationale_id": "frozen-v1",
+      "implementation": "representation_revision.accessibility.resistance"
+    },
+    "R_unit": {
+      "rationale_id": "unit-edit",
+      "implementation": "representation_revision.resistance_robustness.unit_resistance"
+    },
+    "R_depth": {
+      "rationale_id": "hierarchy-weighted",
+      "implementation": "representation_revision.resistance_robustness.depth_resistance"
+    }
+  },
+  "profile": {
+    "separating_pair_counts": {
+      "R_depth": 759,
+      "R_unit": 759,
+      "R_v1": 759
+    },
+    "intersection_sizes": {
+      "R_depth": {
+        "R_depth": 759,
+        "R_unit": 759,
+        "R_v1": 759
+      },
+      "R_unit": {
+        "R_depth": 759,
+        "R_unit": 759,
+        "R_v1": 759
+      },
+      "R_v1": {
+        "R_depth": 759,
+        "R_unit": 759,
+        "R_v1": 759
+      }
+    },
+    "jaccard": {
+      "R_depth": {
+        "R_depth": 1.0,
+        "R_unit": 1.0,
+        "R_v1": 1.0
+      },
+      "R_unit": {
+        "R_depth": 1.0,
+        "R_unit": 1.0,
+        "R_v1": 1.0
+      },
+      "R_v1": {
+        "R_depth": 1.0,
+        "R_unit": 1.0,
+        "R_v1": 1.0
+      }
+    }
+  },
+  "reachability": {
+    "separating_pair_counts": {
+      "R_depth": 759,
+      "R_unit": 755,
+      "R_v1": 755
+    },
+    "intersection_sizes": {
+      "R_depth": {
+        "R_depth": 759,
+        "R_unit": 755,
+        "R_v1": 755
+      },
+      "R_unit": {
+        "R_depth": 755,
+        "R_unit": 755,
+        "R_v1": 755
+      },
+      "R_v1": {
+        "R_depth": 755,
+        "R_unit": 755,
+        "R_v1": 755
+      }
+    },
+    "jaccard": {
+      "R_depth": {
+        "R_depth": 1.0,
+        "R_unit": 0.994729907773386,
+        "R_v1": 0.994729907773386
+      },
+      "R_unit": {
+        "R_depth": 0.994729907773386,
+        "R_unit": 1.0,
+        "R_v1": 1.0
+      },
+      "R_v1": {
+        "R_depth": 0.994729907773386,
+        "R_unit": 1.0,
+        "R_v1": 1.0
+      }
+    }
+  },
+  "cross_checks": {
+    "ordered_nonidentical_pairs": 5852,
+    "v1_profile_separating_pairs": 759,
+    "v1_reach_separating_pairs": 755
+  },
+  "claim": {
+    "outcome": "ROBUST_SEPARATION_SUPPORTED",
+    "statement": "Across the three preregistered resistance constructions, every semantic-equivalent pair separated in full outgoing profile geometry. The v1 and unit-cost families separated the same 755 pairs at tau=3; the hierarchy-weighted family separated all 759 pairs.",
+    "interpretation": "The observed semantic-equivalent separation is not confined to the original R_v1 cost convention within this finite three-family robustness assay. This weakens the explanation that R_v1 alone created the phenomenon, while not establishing an intrinsic geometry.",
+    "not_established": [
+      "resistance geometry is intrinsic or uniquely correct",
+      "accessibility predicts future outcomes",
+      "accessibility causes behavior",
+      "open-ended representation discovery",
+      "completeness over representation space"
+    ]
+  },
+  "canonical_json_sha256": "93db6426fa816e9870df2b7272dcede509c568e67c2ac754a1a5dff3c47eec9e"
+}
