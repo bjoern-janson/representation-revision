@@ -11,6 +11,9 @@ from boolean_world.semantics import semantic_id, semantic_signature
 
 EXPECTED_SOURCE_COMMIT = "df450d91d0b3acdd1c0937bd5d8b20bda98b20b4"
 EXPECTED_SOURCE_TREE = "df357dac8553979dc281b149ec21c211e01e6a4b"
+EXPECTED_DSL_SPEC_HASH = "64922dd1c329b62c326e95f6775a7ee34b6cd4783f91a576a82794362bf8c2dc"
+EXPECTED_REFERENCE_ENUMERATOR_BLOB = "89a0be89a1f223db035828446504a7e6d7e8ce81"
+EXPECTED_IMPLEMENTATION_MANIFEST = "35817ef71f87215949b98d21943576ff33a591587bf851c30f3501c6f8d0e7bb"
 
 
 class CertificateVerificationError(ValueError):
@@ -19,6 +22,10 @@ class CertificateVerificationError(ValueError):
 
 def _sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def _canonical_json(value: Any) -> bytes:
+    return (json.dumps(value, sort_keys=True, indent=2) + "\n").encode("utf-8")
 
 
 def _read_json_bytes(path: Path) -> tuple[Any, bytes]:
@@ -36,8 +43,7 @@ def _certificate_digest(certificate: dict[str, Any]) -> str:
         payload.pop("certificate_hash_sha256")
     except KeyError as exc:
         raise CertificateVerificationError("certificate_hash_sha256 is missing") from exc
-    canonical = json.dumps(payload, sort_keys=True, indent=2) + "\n"
-    return _sha256_bytes(canonical.encode("utf-8"))
+    return _sha256_bytes(_canonical_json(payload))
 
 
 @dataclass(frozen=True)
@@ -71,6 +77,14 @@ def verify_certificate(root: Path | None = None) -> VerifiedUniverse:
         raise CertificateVerificationError("certificate source commit binding mismatch")
     if certificate.get("source_tree") != EXPECTED_SOURCE_TREE:
         raise CertificateVerificationError("certificate source tree binding mismatch")
+    if certificate.get("reference_enumerator_git_blob_sha1") != EXPECTED_REFERENCE_ENUMERATOR_BLOB:
+        raise CertificateVerificationError("reference enumerator binding mismatch")
+    if certificate.get("implementation_manifest_sha256") != EXPECTED_IMPLEMENTATION_MANIFEST:
+        raise CertificateVerificationError("implementation manifest binding mismatch")
+    if certificate.get("dsl_spec_hash_sha256") != EXPECTED_DSL_SPEC_HASH:
+        raise CertificateVerificationError("DSL specification hash binding mismatch")
+    if "dsl_spec" not in certificate or _sha256_bytes(_canonical_json(certificate["dsl_spec"])) != certificate.get("dsl_spec_hash_sha256"):
+        raise CertificateVerificationError("DSL specification content/hash mismatch")
     if certificate.get("d") != 2 or certificate.get("max_depth") != 2:
         raise CertificateVerificationError("unsupported certificate bounds")
 
