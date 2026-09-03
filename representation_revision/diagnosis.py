@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from collections import defaultdict
-
 from .types import Diagnosis, GeneratorSpec, Representation
 
 
@@ -10,12 +8,21 @@ def target(state: tuple[int, ...]) -> int:
     return x0 ^ x1
 
 
-def diagnose(generator: GeneratorSpec, states: list[tuple[int, ...]], evidence: tuple[int, ...] = ()) -> Diagnosis:
-    buckets: dict[tuple[int, ...], set[int]] = defaultdict(set)
-    for state in states:
-        rep: Representation = generator.fn(state, evidence)
-        buckets[rep.features].add(target(state))
-    ambiguous = sum(1 for labels in buckets.values() if len(labels) > 1)
-    if ambiguous:
-        return Diagnosis("generator-failure", "The current representation aliases diagnostic states with different target outcomes.")
-    return Diagnosis("not-evaluable", "The current generator is sufficient on the declared diagnostic domain.")
+def predicted_target(representation: Representation) -> int:
+    if len(representation.features) != 1:
+        raise ValueError("toy assay decoder expects a one-feature surface representation")
+    return representation.features[0]
+
+
+def diagnose(generator: GeneratorSpec, state: tuple[int, ...], observed_outcome: int, evidence=()) -> Diagnosis:
+    representation = generator.fn(state, evidence)
+    predicted = predicted_target(representation)
+    if predicted != observed_outcome:
+        return Diagnosis(
+            "generator-failure",
+            "The observed outcome disagrees with the prediction induced by the current representation.",
+        )
+    return Diagnosis(
+        "not-evaluable",
+        "The current representation is not implicated by the observed trigger event.",
+    )
