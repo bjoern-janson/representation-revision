@@ -1,0 +1,70 @@
+name: v3 custody run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  assay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frozen scientific source
+        uses: actions/checkout@v4
+        with:
+          ref: 0eead840a1fc2f5de96d809b5e7b45ee14f7d726
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest .
+
+      - name: Validate frozen implementation
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p evidence
+          python -m pytest 2>&1 | tee evidence/pytest.log
+
+      - name: Execute frozen v3 assay
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/run_structural_complexity_control.py > evidence/structural_complexity_control_output.json
+
+      - name: Record assay output hash
+        shell: bash
+        run: |
+          sha256sum evidence/structural_complexity_control_output.json > evidence/structural_complexity_control_output.sha256
+
+      - name: Record custody metadata
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "scientific_source_sha=0eead840a1fc2f5de96d809b5e7b45ee14f7d726"
+            echo "workflow_repository_sha=${GITHUB_SHA}"
+            echo "repository=${GITHUB_REPOSITORY}"
+            echo "ref=${GITHUB_REF}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "workflow=${GITHUB_WORKFLOW}"
+          } > evidence/provenance.txt
+
+      - name: Verify evidence integrity
+        if: always()
+        shell: bash
+        run: |
+          if [ -f evidence/structural_complexity_control_output.json ] && [ -f evidence/structural_complexity_control_output.sha256 ]; then
+            sha256sum --check evidence/structural_complexity_control_output.sha256
+          fi
+
+      - name: Upload v3 execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v3-structural-complexity-control-evidence
+          path: evidence/
