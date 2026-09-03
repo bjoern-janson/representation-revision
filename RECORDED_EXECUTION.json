@@ -1,0 +1,47 @@
+{
+  "diagnosis": {
+    "label": "generator-failure",
+    "rationale": "The current representation aliases diagnostic states with different target outcomes."
+  },
+  "diagnostic_inputs": [[1, 0, 0], [1, 1, 0]],
+  "discriminating_evidence": {
+    "candidate_signatures": [
+      ["g1_complete", "(1, 0):1|(1, 1):0"],
+      ["g2_redundant", "(1, 1):1|(1, 1):0"]
+    ],
+    "probes": [[1, 0, 0], [1, 1, 0]],
+    "unique_candidate_id": "g1_complete"
+  },
+  "event": "recorded_scientific_execution",
+  "future_inputs": [[0, 0, 1], [1, 0, 1], [0, 1, 1], [1, 1, 1]],
+  "future_pairs": [
+    {
+      "adaptive_representation": {"features": [0, 0], "generator_id": "g1_complete"},
+      "evidence": [],
+      "input_state": [0, 0, 1],
+      "shadow_representation": {"features": [0], "generator_id": "g0_surface"}
+    },
+    {
+      "adaptive_representation": {"features": [1, 0], "generator_id": "g1_complete"},
+      "evidence": [],
+      "input_state": [1, 0, 1],
+      "shadow_representation": {"features": [1], "generator_id": "g0_surface"}
+    },
+    {
+      "adaptive_representation": {"features": [0, 1], "generator_id": "g1_complete"},
+      "evidence": [],
+      "input_state": [0, 1, 1],
+      "shadow_representation": {"features": [0], "generator_id": "g0_surface"}
+    },
+    {
+      "adaptive_representation": {"features": [1, 1], "generator_id": "g1_complete"},
+      "evidence": [],
+      "input_state": [1, 1, 1],
+      "shadow_representation": {"features": [1], "generator_id": "g0_surface"}
+    }
+  ],
+  "g0_id": "g0_surface",
+  "selected_generator_id": "g1_complete",
+  "trigger_outcome": 1,
+  "trigger_state": [1, 0, 0]
+}
