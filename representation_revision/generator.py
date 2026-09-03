@@ -4,9 +4,9 @@ from .types import GeneratorSpec, Representation
 
 
 def _pair(state: tuple[int, ...]) -> tuple[int, int]:
-    if len(state) != 2 or any(bit not in (0, 1) for bit in state):
-        raise ValueError("toy assay expects exactly two binary input features")
-    return state
+    if len(state) != 3 or any(bit not in (0, 1) for bit in state):
+        raise ValueError("toy assay expects exactly three binary event coordinates")
+    return state[0], state[1]
 
 
 def surface_only(state, evidence=()):
@@ -24,6 +24,6 @@ def redundant_surface(state, evidence=()):
     return Representation("g2_redundant", (x0, x0 | x1))
 
 
-G0 = GeneratorSpec("g0_surface", "Retains only the first binary feature.", surface_only)
-G1 = GeneratorSpec("g1_complete", "Retains both binary features.", interaction_complete)
-G2 = GeneratorSpec("g2_redundant", "Retains the first feature and its OR with the second.", redundant_surface)
+G0 = GeneratorSpec("g0_surface", "Retains only x0; diagnostic/future mode bit is ignored.", surface_only)
+G1 = GeneratorSpec("g1_complete", "Retains x0 and x1; diagnostic/future mode bit is ignored.", interaction_complete)
+G2 = GeneratorSpec("g2_redundant", "Retains x0 and OR(x0,x1); diagnostic/future mode bit is ignored.", redundant_surface)
