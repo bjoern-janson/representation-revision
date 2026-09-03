@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+from .assay import FOLLOW_UP_PROBE_POOL, FUTURE_INPUTS, TRIGGER
+from .diagnosis import target
 from .discriminator import find_discriminator
 from .generator import G0, G1, G2
 from .revision_universe import coverage_report, enumerate_universe
 from .rra import rra
+from .shadow import paired_future_evaluation
 
-POOL = ((0, 0, 0), (0, 1, 0), (1, 0, 0), (1, 1, 0))
+POOL = FOLLOW_UP_PROBE_POOL
 
 
 def certify_finiteness_and_determinism():
@@ -35,10 +38,20 @@ def certify_discrimination():
 
 
 def certify_adoption():
-    result = rra((1, 0, 0), (), G0, enumerate_universe(), POOL)
+    result = rra(TRIGGER, (), G0, enumerate_universe(), POOL)
     assert result.diagnosis.label == "generator-failure"
     assert result.generator_id == G1.generator_id
+    assert target(TRIGGER) == 0
     return result
+
+
+def certify_persistence_and_future_divergence():
+    result = rra(TRIGGER, (), G0, enumerate_universe(), POOL)
+    selected = {spec.generator_id: spec for spec in enumerate_universe()}[result.generator_id]
+    pairs = paired_future_evaluation(selected, G0, FUTURE_INPUTS)
+    assert result.generator_id != G0.generator_id
+    assert any(p.adaptive_representation.features != p.shadow_representation.features for p in pairs)
+    return pairs
 
 
 def run_all_certifications():
@@ -47,4 +60,5 @@ def run_all_certifications():
         "coverage_ids": certify_coverage_independence(),
         "discrimination": certify_discrimination(),
         "adoption": certify_adoption(),
+        "persistence": certify_persistence_and_future_divergence(),
     }
