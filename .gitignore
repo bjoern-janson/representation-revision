@@ -1,0 +1,21 @@
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Build/package outputs
+build/
+dist/
+*.egg-info/
+
+# Local coverage/tool outputs
+.coverage
+htmlcov/
+
+# Generated root assay outputs (durable evidence lives under evidence/)
+/resistance_robustness_output.json
+/structural_complexity_control_output.json
