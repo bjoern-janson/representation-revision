@@ -1,0 +1,121 @@
+{
+  "class_count": 6,
+  "classes": [
+    {
+      "members": [
+        "AND(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(0)))",
+        "AND(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(1),INPUT(1)))",
+        "AND(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(0)))",
+        "AND(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "AND(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "AND(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(0),INPUT(0)))",
+        "AND(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "AND(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(0)))",
+        "AND(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(1)))",
+        "AND(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(1),INPUT(1)))",
+        "AND(NEQ(INPUT(0),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "AND(NEQ(INPUT(1),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "NEQ(INPUT(0),INPUT(0))",
+        "NEQ(INPUT(1),INPUT(1))",
+        "NOT(EQ(INPUT(0),INPUT(0)))",
+        "NOT(EQ(INPUT(1),INPUT(1)))",
+        "OR(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(0)))",
+        "OR(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(1),INPUT(1)))",
+        "OR(NEQ(INPUT(1),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(0)))",
+        "XOR(EQ(INPUT(0),INPUT(0)),EQ(INPUT(1),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(1)),EQ(INPUT(0),INPUT(1)))",
+        "XOR(EQ(INPUT(1),INPUT(1)),EQ(INPUT(1),INPUT(1)))",
+        "XOR(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(0)))",
+        "XOR(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(1),INPUT(1)))",
+        "XOR(NEQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "XOR(NEQ(INPUT(1),INPUT(1)),NEQ(INPUT(1),INPUT(1)))"
+      ],
+      "semantic_id": "9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0",
+      "signature": "0000"
+    },
+    {
+      "members": [
+        "INPUT(0)"
+      ],
+      "semantic_id": "a8d0b6f0939cfd883251f62b265f971ef8a5ab97eee32b91460f08b965601d93",
+      "signature": "0011"
+    },
+    {
+      "members": [
+        "INPUT(1)"
+      ],
+      "semantic_id": "07334386287751ba02a4588c1a0875dbd074a61bd9e6ab7c48d244eacd0c99e0",
+      "signature": "0101"
+    },
+    {
+      "members": [
+        "AND(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(1)))",
+        "AND(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "AND(NEQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "NEQ(INPUT(0),INPUT(1))",
+        "NOT(EQ(INPUT(0),INPUT(1)))",
+        "OR(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(1)))",
+        "OR(NEQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "OR(NEQ(INPUT(0),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(1)),EQ(INPUT(1),INPUT(1)))",
+        "XOR(NEQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(1)))",
+        "XOR(NEQ(INPUT(0),INPUT(1)),NEQ(INPUT(1),INPUT(1)))"
+      ],
+      "semantic_id": "a5c3dd48facf21ed5f916d0ae979091fead570e6aea6c1d8038d1f68b26fa51f",
+      "signature": "0110"
+    },
+    {
+      "members": [
+        "AND(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(1)))",
+        "AND(EQ(INPUT(0),INPUT(1)),EQ(INPUT(0),INPUT(1)))",
+        "AND(EQ(INPUT(0),INPUT(1)),EQ(INPUT(1),INPUT(1)))",
+        "EQ(INPUT(0),INPUT(1))",
+        "NOT(NEQ(INPUT(0),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(1)),EQ(INPUT(0),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(0)))",
+        "OR(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(0)))",
+        "XOR(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "XOR(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(0),INPUT(1)))"
+      ],
+      "semantic_id": "fe675fe7aaee830b6fed09b64e034f84dcbdaeb429d9cccd4ebb90e15af8dd71",
+      "signature": "1001"
+    },
+    {
+      "members": [
+        "AND(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(0)))",
+        "AND(EQ(INPUT(0),INPUT(0)),EQ(INPUT(1),INPUT(1)))",
+        "AND(EQ(INPUT(1),INPUT(1)),EQ(INPUT(1),INPUT(1)))",
+        "EQ(INPUT(0),INPUT(0))",
+        "EQ(INPUT(1),INPUT(1))",
+        "NOT(NEQ(INPUT(0),INPUT(0)))",
+        "NOT(NEQ(INPUT(1),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(0)))",
+        "OR(EQ(INPUT(0),INPUT(0)),EQ(INPUT(0),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(0)),EQ(INPUT(1),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(0)))",
+        "OR(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(1),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(1)),EQ(INPUT(1),INPUT(1)))",
+        "OR(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "OR(EQ(INPUT(1),INPUT(1)),EQ(INPUT(1),INPUT(1)))",
+        "OR(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(0),INPUT(0)))",
+        "OR(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "OR(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(1),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(0),INPUT(0)))",
+        "XOR(EQ(INPUT(0),INPUT(0)),NEQ(INPUT(1),INPUT(1)))",
+        "XOR(EQ(INPUT(0),INPUT(1)),NEQ(INPUT(0),INPUT(1)))",
+        "XOR(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(0),INPUT(0)))",
+        "XOR(EQ(INPUT(1),INPUT(1)),NEQ(INPUT(1),INPUT(1)))"
+      ],
+      "semantic_id": "0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c",
+      "signature": "1111"
+    }
+  ],
+  "d": 2,
+  "syntax_member_count": 77,
+  "truth_table_input_order": "itertools.product((0,1), repeat=d), lexicographic tuple order"
+}
