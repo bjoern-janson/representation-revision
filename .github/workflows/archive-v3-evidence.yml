@@ -1,0 +1,57 @@
+name: archive v3 evidence once
+
+on:
+  push:
+    branches:
+      - repo-repair-v1
+    paths:
+      - .github/workflows/archive-v3-evidence.yml
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@v4
+        with:
+          ref: repo-repair-v1
+
+      - name: Remove unsafe model-mediated archive copy
+        run: rm -f evidence/v3/v3-structural-complexity-control-evidence.zip
+
+      - name: Download existing custodied artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: v3-structural-complexity-control-evidence
+          path: evidence/v3
+          github-token: ${{ github.token }}
+          repository: bjoern-janson/representation-revision
+          run-id: 33775722525
+
+      - name: Verify frozen evidence identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "2ae420019c41bbce43e8e34246d787b26475dc5f3b86f197e01b516ca0b07f72  evidence/v3/structural_complexity_control_output.json" | sha256sum --check -
+          grep -Fx "scientific_source_sha=0eead840a1fc2f5de96d809b5e7b45ee14f7d726" evidence/v3/provenance.txt
+          grep -Fx "workflow_repository_sha=47e432817f1e7791d70e16cc08263bd28f583151" evidence/v3/provenance.txt
+          grep -Fx "run_id=33775722525" evidence/v3/provenance.txt
+          grep -Fx "run_attempt=1" evidence/v3/provenance.txt
+          grep -Fx "workflow=v3 custody run" evidence/v3/provenance.txt
+          grep -Fx "32 passed in 0.46s" evidence/v3/pytest.log
+          sha256sum evidence/v3/provenance.txt evidence/v3/pytest.log evidence/v3/structural_complexity_control_output.sha256 evidence/v3/structural_complexity_control_output.json
+
+      - name: Commit exact evidence bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A evidence/v3
+          git diff --cached --exit-code && exit 1 || true
+          git commit -m "archive: materialize exact v3 custody evidence"
+          git push origin HEAD:repo-repair-v1
