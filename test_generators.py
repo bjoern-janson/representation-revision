@@ -24,12 +24,10 @@ def _reference_depths(d: int, max_depth: int):
                                 pools[depth][ValueType.BOOL].add(make(op, left, right))
 
         if depth == 1:
+            bits = sorted(pools[0][ValueType.BIT], key=lambda n: n.canonical_serialize())
             for op in (Op.EQ, Op.NEQ):
-                for i, left in enumerate(sorted(pools[0][ValueType.BIT], key=lambda n: n.canonical_serialize())):
-                    for right in sorted(
-                        list(pools[0][ValueType.BIT])[i:],
-                        key=lambda n: n.canonical_serialize(),
-                    ):
+                for i, left in enumerate(bits):
+                    for right in bits[i:]:
                         pools[depth][ValueType.BOOL].add(make(op, left, right))
 
     return {
