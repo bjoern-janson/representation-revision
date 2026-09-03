@@ -1,47 +1,49 @@
 {
+  "event": "recorded_scientific_execution",
+  "trigger_state": [1, 1, 0],
+  "trigger_outcome": 0,
+  "g0_id": "g0_surface",
+  "selected_generator_id": "g1_complete",
   "diagnosis": {
     "label": "generator-failure",
-    "rationale": "The current representation aliases diagnostic states with different target outcomes."
+    "rationale": "The observed outcome disagrees with the prediction induced by the current representation."
   },
-  "diagnostic_inputs": [[1, 0, 0], [1, 1, 0]],
   "discriminating_evidence": {
+    "probes": [[1, 0, 0], [1, 1, 0]],
     "candidate_signatures": [
       ["g1_complete", "(1, 0):1|(1, 1):0"],
       ["g2_redundant", "(1, 1):1|(1, 1):0"]
     ],
-    "probes": [[1, 0, 0], [1, 1, 0]],
     "unique_candidate_id": "g1_complete"
   },
-  "event": "recorded_scientific_execution",
   "future_inputs": [[0, 0, 1], [1, 0, 1], [0, 1, 1], [1, 1, 1]],
   "future_pairs": [
     {
-      "adaptive_representation": {"features": [0, 0], "generator_id": "g1_complete"},
-      "evidence": [],
       "input_state": [0, 0, 1],
-      "shadow_representation": {"features": [0], "generator_id": "g0_surface"}
+      "evidence": [],
+      "adaptive_representation": {"generator_id": "g1_complete", "features": [0, 0]},
+      "shadow_representation": {"generator_id": "g0_surface", "features": [0]}
     },
     {
-      "adaptive_representation": {"features": [1, 0], "generator_id": "g1_complete"},
-      "evidence": [],
       "input_state": [1, 0, 1],
-      "shadow_representation": {"features": [1], "generator_id": "g0_surface"}
+      "evidence": [],
+      "adaptive_representation": {"generator_id": "g1_complete", "features": [1, 0]},
+      "shadow_representation": {"generator_id": "g0_surface", "features": [1]}
     },
     {
-      "adaptive_representation": {"features": [0, 1], "generator_id": "g1_complete"},
-      "evidence": [],
       "input_state": [0, 1, 1],
-      "shadow_representation": {"features": [0], "generator_id": "g0_surface"}
+      "evidence": [],
+      "adaptive_representation": {"generator_id": "g1_complete", "features": [0, 1]},
+      "shadow_representation": {"generator_id": "g0_surface", "features": [0]}
     },
     {
-      "adaptive_representation": {"features": [1, 1], "generator_id": "g1_complete"},
-      "evidence": [],
       "input_state": [1, 1, 1],
-      "shadow_representation": {"features": [1], "generator_id": "g0_surface"}
+      "evidence": [],
+      "adaptive_representation": {"generator_id": "g1_complete", "features": [1, 1]},
+      "shadow_representation": {"generator_id": "g0_surface", "features": [1]}
     }
   ],
-  "g0_id": "g0_surface",
-  "selected_generator_id": "g1_complete",
-  "trigger_outcome": 1,
-  "trigger_state": [1, 0, 0]
+  "held_out_disjoint_from_trigger_and_followup": true,
+  "adaptive_shadow_future_inputs_identical": true,
+  "candidate_universe_expanded_after_outcome": false
 }
