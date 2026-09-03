@@ -4,7 +4,7 @@ This repository isolates a narrow empirical question:
 
 > **Within a certified finite Boolean generator universe, can corrective evidence causally discriminate and persistently select a revised representation generator, producing generator-specific consequences on held-out inputs?**
 
-The repository is deliberately split between a **historical toy assay**, a **certified finite-universe operational assay**, and a **representational-accessibility assay**. The historical toy assay is executed evidence; the stronger operational causal assay remains unfired; the accessibility assay is now executed evidence from a separate preregistered finite test of transition structure that does not use future outcomes.
+The repository is deliberately split between a **historical toy assay**, a **certified finite-universe operational assay**, and a **representational-accessibility assay**. The historical toy assay is executed evidence; the stronger operational causal assay remains unfired; the accessibility assay is now executed evidence from separate preregistered finite tests of transition structure that do not use future outcomes.
 
 ## Permanent epistemic guardrails
 
@@ -44,14 +44,16 @@ L1.5 semantic quotient (6 classes)
 🔒 frozen universe certificate
  ↓
 consume-side verification / literal fixture loading
- ├─────────────────────────────────────┐
- ↓                                     ↓
-L2 operational causal assay            v1 representational accessibility
-W/C/P/E                                R → A_t → geometry comparison
- ↓                                     ↓
-held-out generator consequence         ✅ executed semantic-equivalence test
-                                       ↓
-                                       future navigation (not yet tested)
+ ├──────────────────────────────────────────────┐
+ ↓                                              ↓
+L2 operational causal assay                     v1 representational accessibility
+W/C/P/E                                         R → A_t → geometry comparison
+ ↓                                              ↓
+held-out generator consequence                  ✅ semantic-equivalence test
+                                                ↓
+                                                ✅ cross-resistance robustness test
+                                                ↓
+                                                future navigation (not yet tested)
 
 Open frontier: U_t → U_{t+1} (candidate-space expansion)
 ```
@@ -67,14 +69,17 @@ Open frontier: U_t → U_{t+1} (candidate-space expansion)
 | [`REPRESENTATIONAL_ACCESSIBILITY.md`](REPRESENTATIONAL_ACCESSIBILITY.md) | Accessibility assay protocol, controls, and outcome classes |
 | [`RECORDED_ACCESSIBILITY_EXECUTION.json`](RECORDED_ACCESSIBILITY_EXECUTION.json) | Immutable v1 accessibility execution record |
 | [`ACCESSIBILITY_EXECUTION_PROVENANCE.md`](ACCESSIBILITY_EXECUTION_PROVENANCE.md) | Accessibility execution provenance and claim ceiling |
+| [`ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json`](ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json) | Frozen cross-resistance robustness rationale, definitions, and exclusions |
+| [`RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json`](RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json) | Immutable robustness execution record |
+| [`RESISTANCE_ROBUSTNESS_PROVENANCE.md`](RESISTANCE_ROBUSTNESS_PROVENANCE.md) | Robustness execution provenance and claim ceiling |
 | [`certificate/`](certificate/) | Frozen bounded universe, semantic quotient, and consume-side verifier |
 | [`boolean_world/`](boolean_world/) | Typed AST, bounded reference implementation, and pure semantics |
-| [`representation_revision/`](representation_revision/) | Historical three-generator toy assay plus accessibility primitives |
+| [`representation_revision/`](representation_revision/) | Historical three-generator toy assay plus accessibility/robustness primitives |
 | [`PRECERTIFICATION.json`](PRECERTIFICATION.json) | Historical pre-certification checkpoint |
 | [`RECORDED_EXECUTION.json`](RECORDED_EXECUTION.json) | Historical toy execution record |
 | [`EXECUTION_PROVENANCE.md`](EXECUTION_PROVENANCE.md) | Historical provenance and claim ceiling |
-| [`tests/`](tests/) | Regression, certificate, L2, and accessibility contract tests |
-| [`.github/workflows/test.yml`](.github/workflows/test.yml) | Continuous pytest regression workflow |
+| [`tests/`](tests/) | Regression, certificate, L2, accessibility, and robustness contract tests |
+| [`.github/workflows/test.yml`](.github/workflows/test.yml) | Continuous regression workflow; robustness calculation runs before pytest |
 
 ## Frozen state model
 
@@ -131,6 +136,52 @@ This is a finite, relation-relative result. It does not establish that the resis
 
 The complete execution record and provenance are frozen in [`RECORDED_ACCESSIBILITY_EXECUTION.json`](RECORDED_ACCESSIBILITY_EXECUTION.json) and [`ACCESSIBILITY_EXECUTION_PROVENANCE.md`](ACCESSIBILITY_EXECUTION_PROVENANCE.md).
 
+## Resistance robustness assay — executed result
+
+A separate preregistered robustness fork asked only:
+
+> **Does semantic-equivalent separation persist across independently justified resistance constructions?**
+
+Three materially distinct families were frozen before execution: `R_v1` (the original directional convention), `R_unit` (unit-cost structural editing), and `R_depth` (hierarchy-weighted structural editing). The complete rationales, formal rules, parameters, and implementations are frozen in [`ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json`](ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json).
+
+For the same 759 semantic-equivalent pairs:
+
+```text
+Full-profile separation:
+  R_v1     759 / 759
+  R_unit   759 / 759
+  R_depth  759 / 759
+
+Profile Jaccard:
+  R_v1 ↔ R_unit    1.000000
+  R_v1 ↔ R_depth   1.000000
+  R_unit ↔ R_depth 1.000000
+```
+
+At the preregistered common threshold `τ = 3`:
+
+```text
+Reachability separation:
+  R_v1     755 / 759
+  R_unit   755 / 759
+  R_depth  759 / 759
+
+Reachability Jaccard:
+  R_v1 ↔ R_unit    1.000000
+  R_v1 ↔ R_depth   0.994729907773386
+  R_unit ↔ R_depth 0.994729907773386
+```
+
+Thus every semantic-equivalent pair separates in full outgoing profile geometry under all three constructions, while the thresholded separating sets are also highly stable and the `R_v1`/`R_unit` sets coincide exactly.
+
+The narrow robustness conclusion is:
+
+> **Within the certified finite Boolean universe, semantic-equivalent separation is not confined to the original `R_v1` resistance convention in this three-family assay.**
+
+This weakens the explanation that the v1 observation was produced solely by one arbitrary cost convention. It does not establish an intrinsic or uniquely correct representational geometry.
+
+The frozen execution record and provenance are [`RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json`](RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json) and [`RESISTANCE_ROBUSTNESS_PROVENANCE.md`](RESISTANCE_ROBUSTNESS_PROVENANCE.md).
+
 ## Two distinct experimental frontiers
 
 **Within-space:**
@@ -157,7 +208,7 @@ The second problem is deliberately not claimed by the first.
 
 **Operational assay:** 77 certified Boolean AST candidates partitioned into 6 semantic classes. It has a frozen certificate and preregistration, but no operational causal execution has been performed.
 
-**Accessibility assay:** a frozen future-blind resistance relation over the same certified 77 syntax members. Its v1 execution is complete and tests whether semantic equivalence is sufficient to determine transition geometry. No future prediction or open-ended representation discovery is part of v1.
+**Accessibility assay:** a frozen future-blind resistance relation over the same certified 77 syntax members. Its v1 execution is complete and its cross-resistance robustness fork has also been executed. No future prediction or open-ended representation discovery is part of either rung.
 
 The operational certificate is **not** retrofitted into the historical result.
 
@@ -171,18 +222,23 @@ The accessibility execution record has canonical JSON SHA-256:
 
 `c7cce848ebfcd064c4579085ffd4980ade0e27e9f18e9c1dcf4cbf1120a7ecc8`
 
+The resistance robustness execution record has canonical JSON SHA-256:
+
+`1a73d8d15b04552eed64382cd313feb8ae9ccd50dfdb64cd82c4883cf74df148`
+
 ## Local verification
 
 The project targets Python 3.11+ and uses pytest:
 
 ```bash
 python -m pytest
+python scripts/run_resistance_robustness.py
 ```
 
 The certificate consumer verifies the certificate and literal fixtures without calling `enumerate_universe()` during consumption.
 
 ## Claim ceiling
 
-The current repository establishes certified finite candidate-space infrastructure, a historical toy generator-revision demonstration, and an executed v1 accessibility result under the frozen structural resistance relation. The stronger operational causal proposition remains reserved for the unfired L2 assay, and the open-ended candidate-space-expansion problem remains outside the certified finite scope.
+The current repository establishes certified finite candidate-space infrastructure, a historical toy generator-revision demonstration, an executed v1 accessibility result, and a three-family resistance-robustness result. The stronger operational causal proposition remains reserved for the unfired L2 assay, and the open-ended candidate-space-expansion problem remains outside the certified finite scope.
 
 No claim is made here about arbitrary representation invention, universal representation completeness, consciousness, self-reference, recursion, general intelligence, or L3 adaptation.
