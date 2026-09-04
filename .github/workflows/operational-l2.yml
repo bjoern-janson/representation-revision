@@ -1,0 +1,40 @@
+name: operational-l2-v1-custody
+
+on:
+  push:
+    branches:
+      - freeze-operational-l2-v1
+    paths:
+      - representation_revision/operational_l2.py
+      - run_operational_l2.py
+      - .github/workflows/operational-l2.yml
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install pytest
+      - run: python -m pip install -e .
+      - name: Verify full repository before scientific execution
+        run: python -m pytest
+      - name: Execute frozen operational L2 v1 assay once
+        run: |
+          python run_operational_l2.py --source-commit "$GITHUB_SHA" --out OPERATIONAL_L2_RESULT.json | tee OPERATIONAL_L2_STDOUT.json
+          cmp OPERATIONAL_L2_RESULT.json OPERATIONAL_L2_STDOUT.json
+      - name: Hash result
+        run: sha256sum OPERATIONAL_L2_RESULT.json | tee OPERATIONAL_L2_RESULT.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: operational-l2-v1-${{ github.sha }}
+          path: |
+            OPERATIONAL_L2_RESULT.json
+            OPERATIONAL_L2_STDOUT.json
+            OPERATIONAL_L2_RESULT.sha256
+            OPERATIONAL_L2_EXECUTION_PROTOCOL.json
+            OPERATIONAL_PREREGISTRATION.json
+            PREREGISTRATION.md

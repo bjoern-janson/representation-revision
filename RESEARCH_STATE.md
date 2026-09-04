@@ -4,7 +4,7 @@
 **State date:** 2026-09-04  
 **Purpose:** single present-state index for scientific status, provenance, custody, and open frontiers.
 
-This file is a navigation/status document. Historical preregistrations, implementations, result objects, custody records, and claim ceilings remain authoritative within their own jurisdiction. Main-line integration is a governance event and does not create new science.
+This file is a navigation/status document. Historical preregistrations, implementations, result objects, adjudications, and custody records remain authoritative within their own jurisdiction. Main-line integration is governance, not new science.
 
 ## Permanent epistemic boundaries
 
@@ -16,9 +16,10 @@ execution identity != observation identity != interpretation
 observation != explanation != causal interpretation != future authorization
 ordering sensitivity != orientation != causality != adaptation
 adaptation != candidate-space expansion
+implemented != available != authorized != observed
 ```
 
-The unresolved candidate-space frontier is intentionally represented with a question mark:
+The unresolved candidate-space frontier remains:
 
 ```text
 G* not in U_t
@@ -33,16 +34,17 @@ No completed result in this repository earns that arrow.
 
 | Object | Status | Authoritative state / ceiling |
 | --- | --- | --- |
-| Historical three-generator L2 toy assay | EXECUTED / HISTORICAL | Retained as prior evidence; not retrofitted with the later 77-member certificate. |
+| Historical three-generator L2 toy assay | EXECUTED / HISTORICAL | Prior bounded result; not retrofitted with the later 77-member certificate. |
 | Certified finite Boolean universe | FROZEN | `77` syntax members, `6` semantic classes, `d=2`, `max_depth=2`; certification applies only to the declared DSL. |
-| Stronger operational W/C/P/E causal assay | PREREGISTERED / UNFIRED | No operational causal execution has been performed; its stronger causal proposition remains unearned. |
+| Operational L2-v1 | EXECUTED / STOPPED / FROZEN | `C_U=PASS`, fixed trigger gave `D=0`; W/C/P/E were not evaluated; no second draw is authorized. |
+| Operational L2-v2 | NOT OPENED | A future discrepancy-incidence design would require a new question, preregistration, sampling rule, estimand, stopping rule, and authorization. |
 | v1 representational accessibility | EXECUTED / FROZEN | Semantic equivalence does not imply equivalence of outgoing transition geometry under preregistered `R_v1`; at `tau=3`, `755/759` semantic-equivalent pairs have different reachable sets. |
-| v2 resistance robustness | EXECUTED / FROZEN | Separation persists across `R_v1`, `R_unit`, and `R_depth` within the preregistered shared structural-edit family. |
-| v3 structural-complexity control | SUPPORTED / FROZEN / HISTORICAL | Measured outgoing-profile divergence is not fully determined by the declared exact pairwise `|Delta z|` structural-complexity control. |
-| Γ ordering v1 | SUPPORTED / FROZEN / COMPLETE RUNG | The preregistered ordered `Q_k` functional is nonconstant for at least one exactly transition-matched motif across all three frozen resistance families. Ordering sensitivity does not establish orientation, causality, adaptation, or candidate-space expansion. |
-| Γ post-hoc algebraic characterization | FROZEN / NON-AUTHORITY-EXPANDING | `Q_k(a,b,d)=L_k(a,b)+L_k(b,d)`; nonconstancy over `S3` is equivalent to the three static leaf-pair `L_k` values not all being equal. This explains and narrows the Γ result. |
+| v2 resistance robustness | EXECUTED / FROZEN | Separation persists across `R_v1`, `R_unit`, and `R_depth` within the frozen shared structural-edit family. |
+| v3 structural-complexity control | SUPPORTED / FROZEN / HISTORICAL | Measured outgoing-profile divergence is not fully determined by the declared exact pairwise `|Delta z|` complexity control. |
+| Γ ordering v1 | SUPPORTED / FROZEN / COMPLETE RUNG | The preregistered ordered `Q_k` functional is nonconstant for at least one exactly transition-matched motif across all three frozen resistance families. |
+| Γ post-hoc algebraic characterization | FROZEN / NON-AUTHORITY-EXPANDING | `Q_k(a,b,d)=L_k(a,b)+L_k(b,d)`; nonconstancy over `S3` is equivalent to the three static leaf-pair `L_k` values not all being equal. |
 | Γ+1 | NOT AUTHORIZED | No successor temporal/directionality/predictive rung is licensed by the frozen Γ lineage. |
-| Candidate-space expansion `U_t -> U_(t+1)` | UNESTABLISHED | No result demonstrates open-ended representation invention or creation of a genuinely unavailable construction. |
+| Candidate-space expansion `U_t -> U_(t+1)` | UNESTABLISHED | No result demonstrates creation of a genuinely unavailable construction. |
 
 ## Frozen certificate
 
@@ -50,14 +52,94 @@ The consume-side verifier is bound to:
 
 - certificate source commit: `df450d91d0b3acdd1c0937bd5d8b20bda98b20b4`
 - source tree: `df357dac8553979dc281b149ec21c211e01e6a4b`
-- frozen syntax count: `77`
-- semantic class count: `6`
+- syntax members: `77`
+- semantic classes: `6`
 
-Downstream certificate consumption verifies literal fixtures and does not regenerate the universe.
+Downstream certificate consumption verifies literal frozen fixtures and does not regenerate the universe.
+
+## Operational L2-v1 — one-shot causal-gate specimen
+
+Scientific chain:
+
+```text
+2f577515fa2933833d6a50fcf37b9b53e0b31a57  preregistration
+80b5c48135c293c4c5b57a654d6936c6b3aa0607  pre-execution supplement
+c171a0095e6d0d98cac10c998911bc8e506c4d0d  scientific source
+33849068772                                      one-shot custody run
+a60c07ffc9bb787a04c129a67e145b25a25aaf5e  raw observation freeze
+65b2926ea977b1ec0790c7f52e2e44fffa269f7c  primary adjudication
+eae168af0ea12389924076db97024b26fe025f2f  post-hoc methodological characterization
+529f282291bf61ae3b8925059ccd6773480291c7  custody record
+```
+
+Frozen specimen:
+
+```text
+target signature    1011
+G0                  INPUT(0)
+G0 signature        0011
+fixed trigger       (1,1)
+G0(trigger)         1
+target(trigger)     1
+D                   0
+```
+
+Preregistered stop:
+
+```text
+STOP_NO_DISCREPANCY
+```
+
+Observed burden state:
+
+```text
+C_U                     PASS
+D                       0
+W                       NOT_EVALUATED
+C                       NOT_EVALUATED
+P                       NOT_EVALUATED
+E                       NOT_EVALUATED
+G*                      NOT_SELECTED
+primary                 FALSE
+```
+
+This is a scientific stop, not a software failure and not a negative result about downstream W/C/P/E efficacy.
+
+Earned closure:
+
+> **No evidence for or against operational representation revision under W/C/P/E was obtained in L2-v1, because the preregistered discrepancy prerequisite was absent.**
+
+Independent ceiling:
+
+> **Candidate-space expansion `U_t -> U_(t+1)` remains completely untested and unestablished by L2-v1.**
+
+Custody:
+
+```text
+pre-execution verification       48 passed in 0.70s
+artifact ID                      9927624553
+artifact ZIP SHA-256             37f5a68e8f9da9631a7c21712319cbe46d8c88e43edee40e9bcab59bb0fb4ea2
+raw result SHA-256               16b86262224dbf2ce6885bce7c4172d8ed1b1cd55280457c299eb28b696586a2
+scientific workflow run number   1
+```
+
+The post-hoc methodological characterization is explicitly non-authority-expanding and records:
+
+```text
+implemented != available != authorized != observed
+```
+
+and:
+
+```text
+Pr(D = 1 | frozen exposure rule)
+    !=
+1[ exists x in X such that D(x) = 1 ]
+```
+
+No automatic second seed, alternate trigger, or outcome-conditioned probe is authorized. `L2-v2` is **NOT OPENED**.
 
 ## v1 — representational accessibility
-
-Recorded result:
 
 ```text
 semantic-equivalent unordered pairs                759
@@ -70,13 +152,9 @@ Historical claim ceiling:
 
 > Within the certified finite Boolean universe, semantic equivalence does not imply equivalence of outgoing transition geometry under the preregistered structural resistance relation.
 
-The post-hoc methodological audit notes that binary full-profile separation is partly identity-anchored by labeled self coordinates; the thresholded reachable-set result is not forced by that same argument.
-
 Canonical recorded-result SHA-256: `c7cce848ebfcd064c4579085ffd4980ade0e27e9f18e9c1dcf4cbf1120a7ecc8`.
 
 ## v2 — resistance-cost robustness
-
-Recorded counts:
 
 ```text
 full-profile separation
@@ -90,19 +168,15 @@ R_unit    755 / 759
 R_depth   759 / 759
 ```
 
-Historical claim ceiling:
+Claim ceiling:
 
 > The observed semantic-equivalent separation is not confined to the original `R_v1` cost convention within the finite three-family assay.
 
-All three families share the broad canonical-AST recursive structural-edit ontology while varying cost/directionality conventions. Run `33764556701` completed the assay command before a later exact floating-point regression assertion failed in the containing job; see `V2_PROVENANCE_CLARIFICATION.md`.
+All three families share the broad canonical-AST recursive structural-edit ontology. See `V2_PROVENANCE_CLARIFICATION.md` for the historical workflow nuance.
 
 ## v3 — declared structural-complexity control
 
-Frozen scientific source used for custodied execution:
-
-`0eead840a1fc2f5de96d809b5e7b45ee14f7d726`
-
-Custodied result:
+Scientific source: `0eead840a1fc2f5de96d809b5e7b45ee14f7d726`
 
 ```text
 family   N_eligible   N_matched   N_separated   matched strata   nonconstant matched strata
@@ -111,24 +185,19 @@ R_unit        759          759           759          26                    11
 R_v1          759          759           759          26                    11
 ```
 
-The all-zero `|Delta z|` stratum is nonconstant for all three families, satisfying the preregistered positive decision rule.
+The all-zero `|Delta z|` stratum is nonconstant for all three families.
 
-Frozen claim ceiling:
+Frozen ceiling:
 
 > Within the certified finite Boolean universe and across all three preregistered resistance constructions, the declared pairwise structural-complexity difference vector is insufficient to determine the measured outgoing-profile divergence magnitude within at least one exact semantic stratum.
 
-This does not establish intrinsic geometry, semantic causality, temporal organization, prediction, behavioral consequence, candidate-space expansion, or a future-relevant invariant.
-
-### v3 custody
+Custody:
 
 - run: `33775722525`
-- scientific source: `0eead840a1fc2f5de96d809b5e7b45ee14f7d726`
 - observer/workflow SHA: `47e432817f1e7791d70e16cc08263bd28f583151`
 - artifact ID: `9901478202`
 - raw JSON SHA-256: `2ae420019c41bbce43e8e34246d787b26475dc5f3b86f197e01b516ca0b07f72`
 - validation: `32 passed in 0.46s`
-
-A byte-exact copy of the GitHub Actions artifact is archived under `evidence/v3/`.
 
 ## Γ ordering v1
 
@@ -140,12 +209,6 @@ Scientific chain:
 0a648fad0ad3b23bfd4f9ecc4e8e3acaff4598ce  result/adjudication
 18433568be5c8e211060f326140f8c6b4650e648  post-hoc explanation
 ad46551e8ce4758e8608738007380a604e77eaf9  scientific closure
-```
-
-Primary preregistered rule:
-
-```text
-common_positive_motifs > 0
 ```
 
 Observed:
@@ -182,15 +245,13 @@ ordering / adjacency / middle-position sensitivity
 
 ## Γ post-hoc algebraic characterization
 
-This was frozen **after** the primary execution/adjudication and is explicitly non-authority-expanding.
-
 For `Gamma=(c,a,c,b,c,d,c)`:
 
 ```text
 Q_k(a,b,d) = L_k(a,b) + L_k(b,d)
 ```
 
-Therefore:
+and:
 
 ```text
 Q_k nonconstant over S3
@@ -198,11 +259,7 @@ Q_k nonconstant over S3
 L_k(a,b), L_k(a,d), L_k(b,d) are not all equal.
 ```
 
-The positive Γ observation is thus fully explainable by non-equilateral static `L_k` geometry plus ordering. No additional temporal state or orientation is required.
-
-This explanation tightens the claim; it does not replace the preregistered observation and cannot enlarge its authority.
-
-## Γ STOP state
+This fully explains the positive Γ observation using static `L_k` heterogeneity plus ordering. It does not expand the preregistered result's authority.
 
 ```text
 Gamma succeeded
@@ -214,23 +271,17 @@ Gamma narrowed
 STOP
 ```
 
-`Γ+1` is **NOT AUTHORIZED**. A future experiment requires a new scientific question, new preregistration, and new authorization.
+`Γ+1` remains **NOT AUTHORIZED**.
 
-## Post-hoc methodological audit
+## Integration boundaries
 
-`METHODOLOGICAL_AUDIT.md` remains **POST-HOC / NON-AUTHORIZING**. It records scope facts about v1-v3 without altering historical science.
+The Γ lineage was integrated into `main` by a two-parent governance merge recorded in `MAIN_INTEGRATION_RECORD.md`. Its scientific/custody commits remain the content-addressed authorities.
 
-## Main-line integration boundary
+Operational L2-v1 is likewise integrated only after execution, observation freeze, adjudication, post-hoc methodological characterization, and custody. Its main-line integration is recorded separately in `OPERATIONAL_L2_V1_MAIN_INTEGRATION_RECORD.md`.
 
-The original Γ scientific and custody commits remain content-addressed historical authorities. The former `freeze-gamma-ordering-v1` lineage is integrated into `main` by a later two-parent governance merge, recorded in `MAIN_INTEGRATION_RECORD.md`.
+`SCIENTIFIC_CUSTODY_MANIFEST.json` remains byte-for-byte the historical pre-Γ-integration frozen index and is not retroactively rewritten to absorb later lineages.
 
-The merge does not change the identities or bytes of the frozen Γ scientific objects and does not authorize successor science.
-
-`SCIENTIFIC_CUSTODY_MANIFEST.json` is preserved byte-for-byte as the custody index frozen before main-line integration. Its `main_merge_authorized: false` field is therefore historical state, not the current governance decision.
-
-The historical Γ custody workflow remains byte-identical and branch-scoped to `freeze-gamma-ordering-v1`; a push to `main` cannot execute that scientific assay.
-
-Repository-cleanup, custody, documentation, and integration commits after scientific closure are governance/presentation surfaces only. They do not become scientific-source commits by virtue of being later in Git history.
+Scientific workflows remain branch-scoped to their historical execution branches. Ordinary CI on custody/integration commits is repository verification, not new scientific evidence.
 
 ## Open frontier
 
@@ -241,6 +292,6 @@ G* not in U_t
 G* in U_(t+1)
 ```
 
-Known non-sufficient substitutes include selection among pre-existing candidates, activation of dormant constructors, reachability change inside frozen `U`, recombination inside a supplied DSL, hidden answers with exposed hypothesis families, and ordering-sensitive composition of static relations.
+Known non-sufficient substitutes include selection among pre-existing candidates, activation of dormant constructors, reachability change inside frozen `U`, recombination inside a supplied DSL, hidden answers with exposed hypothesis families, ordering-sensitive composition of static relations, and even a future successful W/C/P/E revision inside frozen `U`.
 
 The `?` remains authoritative.
