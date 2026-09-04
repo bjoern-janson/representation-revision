@@ -1,6 +1,8 @@
 {
   "artifact": "OPERATIONAL_L2_V1_EXECUTION_PROTOCOL",
+  "protocol_revision": 2,
   "status": "FROZEN_BEFORE_FIRST_OPERATIONAL_EXECUTION",
+  "supersedes_pre_execution_commit": "0e6b7525cac602fa086c33262c0690b394d8980c",
   "scope": "Implementation-level supplement to PREREGISTRATION.md / OPERATIONAL_PREREGISTRATION.json v5. It resolves previously unspecified execution details without changing the frozen causal burdens, stop rules, or claim ceiling.",
   "parent_public_surface": "0f2856a89653f941c5bae60ec473205c6498552b",
   "frozen_preregistration_commit": "2f577515fa2933833d6a50fcf37b9b53e0b31a57",
@@ -26,18 +28,20 @@
     "held_out_events": [[0,0,1],[0,1,1],[1,0,1],[1,1,1]],
     "held_out_ceiling": "H_post is disjoint at the full event/context level but intentionally reuses the same four certified d=2 generator-input projections; no unseen-input generalization claim is authorized."
   },
-  "source_seeded_target": {
+  "source_seeded_environment": {
     "scientific_source_definition": "the first commit that contains the operational implementation, tests, runner, and one-shot custody workflow",
     "seed_input": "40-character lowercase scientific-source commit SHA passed by the custody workflow as GITHUB_SHA",
-    "derivation": "digest = SHA256(seed_input ASCII); target_index = digest[0] mod 16; target_signature = target_index encoded as four bits in certificate truth-table order",
-    "anti_cherry_pick_rule": "the custody workflow fires on the scientific-source commit before result inspection; source bytes and target derivation may not change after the seeded outcome is exposed"
+    "digest": "SHA256(seed_input ASCII)",
+    "target_derivation": "target_index = digest[0] mod 16; target_signature = target_index encoded as four bits in certificate truth-table order",
+    "trigger_probe_derivation": "trigger_index = digest[1] mod 4; trigger probe is the corresponding fixed probe_projection_order member",
+    "anti_cherry_pick_rule": "the custody workflow fires on the scientific-source commit before result inspection; source bytes, target derivation, and trigger derivation may not change after the seeded outcome is exposed"
   },
   "pre_adoption_sequence": {
     "G0_signature": "0011",
-    "trigger": "first phase-0 probe in fixed order where target output differs from G0 output",
-    "no_trigger_result": "STOP_NO_DISCREPANCY",
-    "diagnosis": "generator-failure after the observed discrepancy",
-    "T_t": "all remaining phase-0 probe/outcome pairs in fixed order; generated from the already-fixed target signature without candidate identities or post-selection metadata",
+    "trigger": "observe exactly the single source-seeded phase-0 trigger probe; no adaptive scan for a discrepancy is permitted",
+    "no_trigger_result": "if target output equals G0 output on that fixed probe, STOP_NO_DISCREPANCY",
+    "diagnosis": "generator-failure only after the fixed trigger discrepancy is observed",
+    "T_t": "after diagnosis, generate the other three phase-0 probe/outcome pairs in fixed global order from the already-fixed target signature; candidate identities and post-selection metadata are unavailable to this function",
     "discrimination": "after trigger and T_t are fixed, evaluate all 77 certified candidates against the complete four-bit evidence signature",
     "unique_candidate_requirement": "exactly one certified syntax member must match; zero or more than one is STOP_NON_UNIQUE_DISCRIMINATION"
   },
@@ -54,7 +58,7 @@
     "certificate verification failure",
     "runtime candidate enumeration or candidate-space expansion",
     "selected-candidate identity leakage into pre-adoption evidence generation",
-    "no trigger discrepancy",
+    "fixed trigger probe shows no discrepancy",
     "zero or non-unique candidate discrimination",
     "selected generator not persistent across H_post",
     "adaptive/shadow future event/evidence mismatch",
