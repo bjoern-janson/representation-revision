@@ -16,7 +16,7 @@ Standing boundary:
 \boxed{\text{residual transition structure}\neq\Gamma_t}
 ```
 
-## Current status after preregistration freeze
+## Current status
 
 ```text
 v3 historical object              FROZEN ✅
@@ -27,16 +27,38 @@ v3 historical object              FROZEN ✅
 Γ_t static / identity controls    FROZEN ✅
 Γ_t failure condition             FROZEN ✅
 Γ_t claim ceiling                 FROZEN ✅
-Γ_t execution                     UNEXECUTED ☐
-Γ_t custody                       OPEN ☐
-Γ_t observation                   UNINSPECTED ☐
-Γ_t adjudication                  OPEN ☐
+Γ_t execution                     COMPLETE ✅
+Γ_t custody                       FROZEN ✅
+Γ_t observation                   FROZEN ✅
+Γ_t adjudication                  SUPPORTED / FROZEN ✅
 ```
 
-Authoritative preregistration:
+## Authority chain
 
-- `GAMMA_PREREGISTRATION.md`
-- `GAMMA_ORDERING_PREREGISTRATION.json`
+```text
+open design ledger
+  e154cd7d791a23d40463fc513e64e3d7b798d845
+
+preregistration freeze
+  05f718cba12194a42c1578f790081cc9016a151f
+
+scientific source
+  389969e510446450684402be3c1df4ececcf0ed7
+
+custody run
+  GitHub Actions 33844036424
+  job 100931989081
+  artifact 9925862074
+
+raw observation
+  GAMMA_ORDERING_RESULT.json
+  SHA-256 abc55c8d63f055e9681b6feeef926f8bbe9e026368d974f3f0fbb18b70ca01f5
+
+adjudication
+  GAMMA_ORDERING_ADJUDICATION.md
+```
+
+The scientific source remains distinct from the later observation/adjudication commit.
 
 ## Frozen assay compression
 
@@ -68,14 +90,37 @@ and:
 Q_k(\Gamma)=\sum_{t=0}^{4}L_k(G_t,G_{t+2}).
 ```
 
-Primary success requires at least one **same motif** whose six null permutations produce nonconstant `Q_k` under all three frozen resistance families.
+Primary success required at least one **same motif** whose six null permutations produce nonconstant `Q_k` under all three frozen resistance families.
+
+## Frozen result
+
+```text
+eligible motifs                  116,664
+common-positive motifs           116,475
+primary criterion                SATISFIED
+```
+
+Per-family order-sensitive counts:
+
+```text
+R_v1       116,475
+R_unit     116,475
+R_depth    116,592
+```
+
+The exact exhaustive observation is `GAMMA_ORDERING_RESULT.json`. The bounded scientific interpretation is `GAMMA_ORDERING_ADJUDICATION.md`.
+
+## Earned claim ceiling
+
+> **Within the certified finite Boolean universe, there exists a semantically invariant, exactly transition-matched composable thread for which the preregistered second-order outgoing-profile displacement depends on transition ordering across all three frozen resistance conventions. Thus this measured quantity is not determined by the preserved directed transition multiset and declared static controls alone.**
 
 ## Interpretation boundary
 
-The statistic is reversal-invariant. A positive result can establish ordering/adjacency sensitivity of the declared finite statistic only. It cannot establish:
+The statistic is reversal-invariant. The supported result is therefore an **ordering / adjacency** result, not a directional or arrow-of-time result.
+
+It must not be promoted to:
 
 ```text
-arrow of time
 prediction
 causation
 adaptation
@@ -83,6 +128,7 @@ intrinsic geometry
 representation-space completeness
 candidate-space expansion
 future-relevant invariants
+open-ended representation invention
 ```
 
-No Γ conclusion exists until the frozen implementation is executed and the result is separately custodied and adjudicated.
+No successor Γ rung is opened automatically by this positive result.
