@@ -1,6 +1,6 @@
 # Γ_t Scientific Ledger
 
-This ledger records only the new `Γ_t` rung. It does not modify or reinterpret v3.
+This ledger records only the `Γ_t` rung. It does not modify or reinterpret v1–v3.
 
 ## Frozen predecessor boundary
 
@@ -10,68 +10,79 @@ v3 remains a completed historical object:
 protocol + scientific source + custody + observation + adjudication + claim ceiling
 ```
 
-The standing boundary is:
+Standing boundary:
 
 ```math
-\\boxed{\\text{residual transition structure}\\neq\\Gamma_t}
+\boxed{\text{residual transition structure}\neq\Gamma_t}
 ```
 
-## Current status
+## Current status after preregistration freeze
 
 ```text
 v3 historical object              FROZEN ✅
-Γ_t protocol                      OPEN ☐
-Γ_t temporal object               OPEN ☐
-Γ_t directional statistic        OPEN ☐
-Γ_t ordering null                OPEN ☐
-Γ_t static-geometry control      OPEN ☐
-Γ_t failure condition             OPEN ☐
-Γ_t claim ceiling                 OPEN ☐
-Γ_t execution                     OPEN ☐
+Γ_t protocol                      FROZEN ✅
+Γ_t temporal object               FROZEN ✅
+Γ_t ordering statistic            FROZEN ✅
+Γ_t ordering null                 FROZEN ✅
+Γ_t static / identity controls    FROZEN ✅
+Γ_t failure condition             FROZEN ✅
+Γ_t claim ceiling                 FROZEN ✅
+Γ_t execution                     UNEXECUTED ☐
 Γ_t custody                       OPEN ☐
-Γ_t observation                   OPEN ☐
+Γ_t observation                   UNINSPECTED ☐
 Γ_t adjudication                  OPEN ☐
 ```
 
-## Design question
+Authoritative preregistration:
 
-The new experiment must distinguish:
+- `GAMMA_PREREGISTRATION.md`
+- `GAMMA_ORDERING_PREREGISTRATION.json`
 
-```text
-static transition structure
-```
+## Frozen assay compression
 
-from:
-
-```text
-ordered / directional organization over transitions
-```
-
-The candidate comparison is an ordered sequence
+Eligible motif:
 
 ```math
-(\\Delta G_0,\\Delta G_1,\\ldots,\\Delta G_{T-1})
+M=(c,\{a,b,d\})
 ```
 
-against an order-destroying permutation of the same transitions
+with four distinct representations from one certified semantic class.
+
+Exact null threads:
 
 ```math
-(\\Delta G_{\\pi(0)},\\Delta G_{\\pi(1)},\\ldots,\\Delta G_{\\pi(T-1)}).
+\Gamma_\pi=(c,\pi_1,c,\pi_2,c,\pi_3,c),\qquad \pi\in S_3.
 ```
 
-No particular permutation distribution, statistic, sequence length, or matching scheme is frozen by this ledger.
+Every permutation preserves the same six directed transitions, the same identities, the same visit counts, the same start/end state, and the same static resistance objects.
+
+For resistance family `k`:
+
+```math
+L_k(i,j)=\sum_r|R_k(G_i,G_r)-R_k(G_j,G_r)|
+```
+
+and:
+
+```math
+Q_k(\Gamma)=\sum_{t=0}^{4}L_k(G_t,G_{t+2}).
+```
+
+Primary success requires at least one **same motif** whose six null permutations produce nonconstant `Q_k` under all three frozen resistance families.
 
 ## Interpretation boundary
 
-A successful `Γ_t` result, if one is later earned, must remain finite and relative to the declared experimental construction. It must not automatically be promoted to:
+The statistic is reversal-invariant. A positive result can establish ordering/adjacency sensitivity of the declared finite statistic only. It cannot establish:
 
 ```text
+arrow of time
 prediction
 causation
 adaptation
 intrinsic geometry
 representation-space completeness
 candidate-space expansion
+future-relevant invariants
 ```
 
-No scientific conclusion follows from the existence of this ledger.
+No Γ conclusion exists until the frozen implementation is executed and the result is separately custodied and adjudicated.

@@ -1,115 +1,264 @@
-# Γ_t — Fresh Scientific Preregistration Ledger
+# Γ_t — Frozen Ordering Preregistration v1
 
-**Status:** OPEN / NOT FROZEN  
+**Status:** `FROZEN / UNEXECUTED`  
 **Scientific rung:** `Γ_t`  
-**Purpose:** establish a new scientific object for testing whether an observed transition sequence contains directional or temporal organization beyond static transition geometry.
+**Parent open-ledger commit:** `e154cd7d791a23d40463fc513e64e3d7b798d845`  
+**Scope:** finite ordering/adjacency assay only; no directional arrow-of-time claim.
 
-## Separation from v3
+This freeze closes the open design ledger before any Γ outcome is inspected. It does not modify or reinterpret v1–v3.
 
-This document is a new scientific ledger. It is **not a v3 extension, amendment, or reinterpretation**.
+## 1. Primary question
 
-The v3 scientific object remains historical and frozen. In particular:
+> **Within a fixed composable transition inventory, can the preregistered measured quantity change when only the ordering of those transitions changes?**
 
-```text
-v3 protocol
-v3 scientific source
-v3 custody record
-v3 observation
-v3 adjudication
-v3 claim ceiling
-```
-
-must not be changed by this rung.
-
-The standing boundary is:
+The target separation is:
 
 ```math
-\\boxed{\\text{residual transition structure}\\neq\\Gamma_t}
-```
-
-No temporal, directional, predictive, causal, or intrinsic interpretation is inherited from v3.
-
-## Primary scientific question
-
-> **Does an observed quantity depend on the ordering of transitions, rather than only on the multiset of those transitions?**
-
-The conceptual object is an ordered transition thread:
-
-```math
-(\\Delta G_0,\\Delta G_1,\\ldots,\\Delta G_{T-1}).
-```
-
-A corresponding order-destroying transformation permutes the same transitions:
-
-```math
-(\\Delta G_{\\pi(0)},\\Delta G_{\\pi(1)},\\ldots,\\Delta G_{\\pi(T-1)}).
-```
-
-The permutation/null construction, statistic, matching constraints, and admissible sequence lengths are **not yet frozen here**. They must be specified before execution.
-
-## Required preregistration components
-
-The final frozen preregistration must independently specify:
-
-1. **Temporal object:** exactly what constitutes a transition thread, its endpoints, ordering, length, and admissible transitions.
-2. **Directional statistic:** a deterministic scalar or finite vector that is computed from the ordered thread.
-3. **Ordering-destroying null:** a transformation that preserves the declared transition multiset and relevant marginals while destroying the ordering property under test.
-4. **Static-geometry control:** an explicit control that distinguishes ordering effects from quantities already determined by static outgoing transition geometry.
-5. **Null ensemble / comparison rule:** the exact finite comparison procedure, including all matching, stratification, or exhaustive enumeration rules.
-6. **Failure condition:** a predeclared result under which the directional/temporal organization question is not supported.
-7. **Claim ceiling:** the strongest finite statement that may be made if the preregistered criterion succeeds.
-8. **Exclusions:** explicit prohibitions on prediction, causal correction, candidate-space expansion, intrinsic geometry, and generalization beyond the certified finite universe unless separately registered.
-
-## Core falsifier
-
-The central falsifier should operationalize the distinction:
-
-```math
-\\boxed{
-\\text{same transition multiset} + \\text{different ordering}
-\\not\\Rightarrow
-\\text{same measured quantity}
+\boxed{
+\text{same directed transition multiset}
++
+\text{different ordering}
+\not\Rightarrow
+\text{same }Q_k
 }
 ```
 
-A successful result must therefore survive the declared static-geometry controls and cannot be credited merely because different sequences contain different transitions.
+This assay tests **ordering / adjacency sensitivity**. Because the statistic below is reversal-invariant, it does **not** test an arrow of time or directional asymmetry.
 
-## Provisional claim ceiling
+## 2. Frozen universe
 
-No positive claim is currently registered beyond the following target form:
+Use the certified 77-member Boolean universe already present on the parent branch:
 
-> **Within the declared finite experimental universe and under the preregistered controls, the measured quantity is sensitive to transition ordering rather than being fully determined by the preserved static transition multiset and declared static-geometry controls.**
+- `certificate/U_syntax.json` blob `a74165f547390a116caa47f0ea16679e54c025a8`
+- `certificate/U_semantic.json` blob `dbeda59e6961eb7cc40672b8f336b1d62e8b793c`
+- syntax members: `77`
+- semantic classes: `6`
+- class sizes: `[27, 1, 1, 12, 12, 24]`
 
-This wording is **provisional** and becomes authoritative only after the complete protocol, statistic, null, controls, thresholds, and failure rule are frozen.
+Certification remains relative to the declared DSL. No representation-space completeness claim is inherited.
 
-## Explicit exclusions
+## 3. Frozen resistance families
 
-This rung does **not** by itself authorize claims about:
+Use exactly the three predecessor resistance constructions already frozen in v2/v3:
+
+1. `R_v1` = `representation_revision.accessibility.resistance`
+2. `R_unit` = `representation_revision.resistance_robustness.unit_resistance`
+3. `R_depth` = `representation_revision.resistance_robustness.depth_resistance`
+
+Relevant parent-branch blobs:
+
+- `representation_revision/accessibility.py`: `0f15545056800775d1be1d0b412cbb153c4c3089`
+- `representation_revision/resistance_robustness.py`: `59a50b4de372bdc7b4100707568d9c804ab89355`
+
+These families share a broad canonical-AST structural-edit ontology. A cross-family result is therefore robustness within this declared family, not evidence for intrinsic geometry.
+
+## 4. Temporal object
+
+An eligible motif is:
+
+```math
+M=(c,\{a,b,d\})
+```
+
+such that:
+
+- `c`, `a`, `b`, and `d` are four distinct certified syntax members;
+- all four belong to the same certified semantic class;
+- `c` is the center;
+- `{a,b,d}` is an unordered 3-leaf set.
+
+For each permutation `π=(π1,π2,π3)` of the three leaves, construct the composable seven-state thread:
+
+```math
+\Gamma_\pi=(c,\pi_1,c,\pi_2,c,\pi_3,c).
+```
+
+Its six directed transitions are:
 
 ```text
+c -> π1
+π1 -> c
+c -> π2
+π2 -> c
+c -> π3
+π3 -> c
+```
+
+Across all six `S3` permutations, the directed transition multiset is exactly:
+
+```text
+{c->a, a->c, c->b, b->c, c->d, d->c}
+```
+
+with every transition appearing once.
+
+From the frozen semantic class sizes, the eligible motif count is fixed before execution as:
+
+```math
+\sum_s n_s\binom{n_s-1}{3}=116664.
+```
+
+## 5. Identity / reuse control
+
+Every null thread preserves exactly:
+
+- the same center identity `c`;
+- center visit count = `4`;
+- each leaf identity and leaf visit count = `1`;
+- the same start state and end state (`c`);
+- the same four participating representations;
+- the same semantic class;
+- the same directed transition multiset;
+- the same complete static outgoing resistance profiles of all four representations;
+- the same complete pairwise resistance matrix among the four representations for each family;
+- the same complexity vectors of all four representations.
+
+Thus different reuse counts, different participating identities, different endpoints, or different transition inventories cannot explain a within-motif Γ difference.
+
+## 6. Frozen outgoing-profile displacement
+
+For family `k`, define the full outgoing profile over the certified 77-member universe:
+
+```math
+P_k(G)=(R_k(G,G_r))_{r=1}^{77}.
+```
+
+Define symmetric profile displacement:
+
+```math
+L_k(i,j)=\sum_{r=1}^{77}|R_k(G_i,G_r)-R_k(G_j,G_r)|.
+```
+
+The destination universe intentionally remains the same mixed BIT/BOOL 77-member universe used by the predecessor profile assays. No new semantic interpretation is attached to that choice.
+
+## 7. Frozen ordering statistic
+
+For a seven-state thread `Γ=(G0,...,G6)`, define:
+
+```math
+\boxed{
+Q_k(\Gamma)=\sum_{t=0}^{4}L_k(G_t,G_{t+2})
+}
+```
+
+For the center-return excursion construction this simplifies exactly to:
+
+```math
+\boxed{
+Q_k(\Gamma_\pi)=L_k(\pi_1,\pi_2)+L_k(\pi_2,\pi_3).
+}
+```
+
+`Q_k` is integer-valued and deterministic.
+
+Because `L_k` is symmetric:
+
+```math
+Q_k(\pi_1,\pi_2,\pi_3)=Q_k(\pi_3,\pi_2,\pi_1).
+```
+
+Therefore this statistic is **reversal-invariant**. At most three distinct `Q_k` values can occur over the six permutations. A positive result is an ordering/adjacency result, not a directionality result.
+
+## 8. Exact ordering-destroying null
+
+For every eligible motif, exhaust all `3! = 6` leaf permutations. There is no stochastic permutation sample and no p-value threshold.
+
+For family `k`, define:
+
+```math
+D_k(M)=|\{Q_k(\Gamma_\pi):\pi\in S_3\}|.
+```
+
+A motif is order-sensitive under family `k` iff:
+
+```math
+\boxed{D_k(M)>1.}
+```
+
+Also report:
+
+```math
+\Delta Q_k(M)=\max_\pi Q_k(\Gamma_\pi)-\min_\pi Q_k(\Gamma_\pi).
+```
+
+## 9. Primary decision rule
+
+Let:
+
+```math
+C=\{M:D_{v1}(M)>1\land D_{unit}(M)>1\land D_{depth}(M)>1\}.
+```
+
+**Positive criterion:**
+
+```math
+\boxed{|C|>0.}
+```
+
+**Failure criterion:**
+
+```math
+\boxed{|C|=0.}
+```
+
+The same motif must be order-sensitive under all three resistance constructions. Family-specific positives without a common motif do not satisfy the primary criterion.
+
+## 10. Frozen reporting
+
+Report, without changing the decision rule:
+
+- eligible motif count;
+- per-family order-sensitive motif count;
+- common-positive motif count `|C|`;
+- per-family counts for `D_k(M) in {1,2,3}`;
+- per-family `ΔQ_k` minimum/median/maximum among positive motifs;
+- one deterministic lexicographically earliest common witness, if one exists;
+- its six permutation threads and exact `Q_k` values for all three families.
+
+The witness is descriptive after the exhaustive primary result; it is not selected to define success.
+
+## 11. Positive claim ceiling
+
+If and only if `|C|>0`, the strongest authorized statement is:
+
+> **Within the certified finite Boolean universe, there exists a semantically invariant, exactly transition-matched composable thread for which the preregistered second-order outgoing-profile displacement depends on transition ordering across all three frozen resistance conventions. Thus this measured quantity is not determined by the preserved directed transition multiset and declared static controls alone.**
+
+The result would establish only order/adjacency sensitivity of this declared finite statistic.
+
+## 12. Explicit exclusions
+
+No result from this assay, positive or negative, establishes:
+
+```text
+arrow of time
+causal efficacy
 future prediction
-causal efficacy of correction
 learning or adaptation
+beneficial correction
 intrinsic / natural representational geometry
 universal representation-space completeness
-candidate-space expansion U_t → U_{t+1}
+candidate-space expansion U_t -> U_(t+1)
 future-relevant invariants I_t
+open-ended representation invention
 ```
 
-## Scientific ledger
+A positive result also does not show that order contains information beyond the complete static profile geometry plus the ordering operation; `Q_k` is constructed from those frozen profiles. The claim is specifically that the preserved transition multiset and declared static controls do not by themselves determine `Q_k` without order.
+
+## 13. Execution gate
+
+Before any certified-universe Γ outcome is inspected:
 
 ```text
-Protocol frozen                 ☐
-Temporal object frozen          ☐
-Directional statistic frozen   ☐
-Ordering null frozen            ☐
-Static-geometry control frozen ☐
-Failure condition frozen       ☐
-Claim ceiling frozen            ☐
-Execution                        ☐
-Custody                         ☐
-Observation inspection          ☐
-Adjudication                   ☐
+Protocol frozen                 YES
+Temporal object frozen          YES
+Ordering statistic frozen       YES
+Ordering null frozen            YES
+Static / identity controls      YES
+Failure condition frozen        YES
+Claim ceiling frozen            YES
+Execution                       NO
+Observation inspection          NO
+Adjudication                    NO
 ```
 
-Until all protocol elements are frozen, this document remains an **open design ledger** and no `Γ_t` result is established.
+Any implementation tests executed before the scientific run must use toy fixtures or predecessor-result checks only; they may not inspect certified-universe Γ outcomes.

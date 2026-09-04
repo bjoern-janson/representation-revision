@@ -1,0 +1,69 @@
+{
+  "artifact": "GAMMA_ORDERING_PREREGISTRATION_V1",
+  "status": "FROZEN_UNEXECUTED",
+  "parent_open_ledger_commit": "e154cd7d791a23d40463fc513e64e3d7b798d845",
+  "universe": {
+    "syntax_blob": "a74165f547390a116caa47f0ea16679e54c025a8",
+    "semantic_blob": "dbeda59e6961eb7cc40672b8f336b1d62e8b793c",
+    "syntax_members": 77,
+    "semantic_classes": 6,
+    "class_sizes": [27, 1, 1, 12, 12, 24],
+    "eligible_motifs": 116664
+  },
+  "resistance_families": {
+    "R_v1": {
+      "module": "representation_revision.accessibility",
+      "function": "resistance",
+      "blob": "0f15545056800775d1be1d0b412cbb153c4c3089"
+    },
+    "R_unit": {
+      "module": "representation_revision.resistance_robustness",
+      "function": "unit_resistance",
+      "blob": "59a50b4de372bdc7b4100707568d9c804ab89355"
+    },
+    "R_depth": {
+      "module": "representation_revision.resistance_robustness",
+      "function": "depth_resistance",
+      "blob": "59a50b4de372bdc7b4100707568d9c804ab89355"
+    }
+  },
+  "motif": {
+    "definition": "center c plus unordered 3-leaf set {a,b,d}, all four distinct and in one certified semantic class",
+    "thread": "(c,pi1,c,pi2,c,pi3,c)",
+    "permutations": "all S3 permutations",
+    "directed_transition_multiset": "{c->a,a->c,c->b,b->c,c->d,d->c}",
+    "center_visit_count": 4,
+    "leaf_visit_count_each": 1,
+    "start_equals_end": true
+  },
+  "profile": "P_k(G) = (R_k(G,G_r)) over all 77 certified syntax members",
+  "displacement": "L_k(i,j) = sum_r abs(R_k(G_i,G_r)-R_k(G_j,G_r))",
+  "statistic": "Q_k(Gamma) = sum_{t=0}^4 L_k(G_t,G_{t+2}) = L_k(pi1,pi2)+L_k(pi2,pi3)",
+  "reversal_invariant": true,
+  "null": "exhaust all six leaf permutations; no stochastic sampling",
+  "family_positive": "D_k(M)=number of distinct Q values over S3 > 1",
+  "primary_positive": "exists same motif M positive for R_v1, R_unit, and R_depth",
+  "primary_failure": "no common-positive motif",
+  "secondary_reports": [
+    "eligible motif count",
+    "per-family positive count",
+    "common-positive count",
+    "per-family D counts in {1,2,3}",
+    "per-family DeltaQ min/median/max among positive motifs",
+    "lexicographically earliest common witness and all six Q values"
+  ],
+  "claim_ceiling": "Within the certified finite Boolean universe, there exists a semantically invariant, exactly transition-matched composable thread for which the preregistered second-order outgoing-profile displacement depends on transition ordering across all three frozen resistance conventions. Thus this measured quantity is not determined by the preserved directed transition multiset and declared static controls alone.",
+  "exclusions": [
+    "arrow of time",
+    "causal efficacy",
+    "future prediction",
+    "learning or adaptation",
+    "beneficial correction",
+    "intrinsic geometry",
+    "representation-space completeness",
+    "candidate-space expansion",
+    "future-relevant invariants",
+    "open-ended representation invention"
+  ],
+  "execution_inspected": false
+}
