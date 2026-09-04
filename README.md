@@ -1,244 +1,377 @@
-# Representation Revision — L2 Causal Assay
+# Representation Revision — Frozen Finite-Universe Ladder
 
-This repository isolates a narrow empirical question:
+This branch is the custody-preserving record of a finite representation-revision / accessibility program.
 
-> **Within a certified finite Boolean generator universe, can corrective evidence causally discriminate and persistently select a revised representation generator, producing generator-specific consequences on held-out inputs?**
+> **Current scientific state:** v1, v2, v3, and Γ ordering v1 are executed and frozen; Γ has a separately frozen post-hoc algebraic explanation; **no Γ+1 is authorized**.
 
-The repository is deliberately split between a **historical toy assay**, a **certified finite-universe operational assay**, and a **representational-accessibility assay**. The historical toy assay is executed evidence; the stronger operational causal assay remains unfired; the accessibility assay is now executed evidence from separate preregistered finite tests of transition structure that do not use future outcomes.
+The branch `freeze-gamma-ordering-v1` remains separate from `main`.
 
-## Permanent epistemic guardrails
-
-### Candidate-space guardrail
-
-> **Complete over the declared DSL does not imply complete over all possible representations.**
-
-The frozen certificate certifies only the declared Boolean DSL at `d=2`, `max_depth=2`, with its stated canonicalization policy.
-
-### Mechanistic guardrail
-
-> **Behavioral equivalence does not imply mechanistic equivalence.**
-
-Therefore:
+The unresolved frontier is intentionally left open:
 
 ```text
-ΔB  ↛  ΔG  ↛  Cause(e, ΔG)  ↛  ΔG-specific held-out consequence
+G* not in U_t
+      ?
+      ↓
+G* in U_(t+1)
 ```
 
-A behavioral change is not sufficient evidence of generator change; generator change is not sufficient evidence that corrective evidence caused it; and neither establishes a generator-specific held-out consequence by itself.
+Nothing in the frozen results below establishes candidate-space expansion.
 
-### Frontier guardrail
-
-> **Candidate evaluation is not candidate generation.**
-
-A frozen candidate space can certify selection and transition structure **within that space**. It cannot establish that the space contains every causally relevant representation.
-
-## Research stack
+## Permanent boundary calculus
 
 ```text
-L0  Boolean ontology
- ↓
-L1  bounded syntactic universe (77 members)
- ↓
-L1.5 semantic quotient (6 classes)
- ↓
-🔒 frozen universe certificate
- ↓
-consume-side verification / literal fixture loading
- ├──────────────────────────────────────────────┐
- ↓                                              ↓
-L2 operational causal assay                     v1 representational accessibility
-W/C/P/E                                         R → A_t → geometry comparison
- ↓                                              ↓
-held-out generator consequence                  ✅ semantic-equivalence test
-                                                ↓
-                                                ✅ cross-resistance robustness test
-                                                ↓
-                                                future navigation (not yet tested)
-
-Open frontier: U_t → U_{t+1} (candidate-space expansion)
+observation
+    != mechanistic explanation
+    != causal interpretation
+    != future research authorization
 ```
 
-## Repository map
-
-| Path | Role |
-| --- | --- |
-| [`ASSAY.md`](ASSAY.md) | Historical/operational assay protocol and causal boundaries |
-| [`PREREGISTRATION.md`](PREREGISTRATION.md) | Frozen operational L2 preregistration |
-| [`OPERATIONAL_PREREGISTRATION.json`](OPERATIONAL_PREREGISTRATION.json) | Machine-checkable W/C/P/E contract and stop rules |
-| [`ACCESSIBILITY_PREREGISTRATION.json`](ACCESSIBILITY_PREREGISTRATION.json) | Frozen v1 accessibility resistance specification and claim ceiling |
-| [`REPRESENTATIONAL_ACCESSIBILITY.md`](REPRESENTATIONAL_ACCESSIBILITY.md) | Accessibility assay protocol, controls, and outcome classes |
-| [`RECORDED_ACCESSIBILITY_EXECUTION.json`](RECORDED_ACCESSIBILITY_EXECUTION.json) | Immutable v1 accessibility execution record |
-| [`ACCESSIBILITY_EXECUTION_PROVENANCE.md`](ACCESSIBILITY_EXECUTION_PROVENANCE.md) | Accessibility execution provenance and claim ceiling |
-| [`ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json`](ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json) | Frozen cross-resistance robustness rationale, definitions, and exclusions |
-| [`RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json`](RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json) | Immutable robustness execution record |
-| [`RESISTANCE_ROBUSTNESS_PROVENANCE.md`](RESISTANCE_ROBUSTNESS_PROVENANCE.md) | Robustness execution provenance and claim ceiling |
-| [`certificate/`](certificate/) | Frozen bounded universe, semantic quotient, and consume-side verifier |
-| [`boolean_world/`](boolean_world/) | Typed AST, bounded reference implementation, and pure semantics |
-| [`representation_revision/`](representation_revision/) | Historical three-generator toy assay plus accessibility/robustness primitives |
-| [`PRECERTIFICATION.json`](PRECERTIFICATION.json) | Historical pre-certification checkpoint |
-| [`RECORDED_EXECUTION.json`](RECORDED_EXECUTION.json) | Historical toy execution record |
-| [`EXECUTION_PROVENANCE.md`](EXECUTION_PROVENANCE.md) | Historical provenance and claim ceiling |
-| [`tests/`](tests/) | Regression, certificate, L2, accessibility, and robustness contract tests |
-| [`.github/workflows/test.yml`](.github/workflows/test.yml) | Continuous regression workflow; robustness calculation runs before pytest |
-
-## Frozen state model
-
-The conceptual state decomposition is deliberately kept distinct:
+and:
 
 ```text
-G_t       current representation
-A_t       cheaply reachable representations
-Γ_t       temporal organization of accessibility
-I_t       future-relevant invariant
-X_{>t}    future observations / transitions
+selection                  != newly constructible
+reachability change        != newly constructible
+ordering sensitivity       != orientation
+orientation                != causality
+causality                  != adaptation
+adaptation                 != U_t -> U_(t+1)
 ```
 
-A candidate representation dimension earns dynamic relevance only under intervention if varying it, with the relevant controls held fixed, changes transition accessibility. This is a criterion for **candidate dynamic relevance**, not a completeness criterion for representation space.
+These are claim boundaries, not rhetorical caveats.
 
-A separate resource coordinate may be tracked as `r_t`; no inference is made that more resources necessarily increase representational reach.
+## Scientific objects kept separate
 
-## Two distinct incompletenesses
+This repository contains three distinct kinds of object that must not inherit one another's evidential credit:
+
+1. **Historical bounded-revision toy assay** — recorded prior result over a hand-declared three-generator candidate set. See [`RECORDED_EXECUTION.json`](RECORDED_EXECUTION.json) and [`EXECUTION_PROVENANCE.md`](EXECUTION_PROVENANCE.md).
+2. **Operational L2 W/C/P/E assay** — preregistered but **unfired**. See [`PREREGISTRATION.md`](PREREGISTRATION.md) and [`OPERATIONAL_PREREGISTRATION.json`](OPERATIONAL_PREREGISTRATION.json).
+3. **Certified finite-universe accessibility ladder** — the v1 → v2 → v3 → Γ → post-hoc sequence documented below.
+
+The operational causal assay is not retroactively credited by the accessibility ladder, and the historical toy result is not upgraded into open-ended candidate generation.
+
+## Certified finite universe
+
+The accessibility ladder consumes a frozen Boolean universe with:
 
 ```text
-U_t-internal incompleteness
-    candidate exists in U_t but is inaccessible, unselected, or non-persistent
-
-U_t-external incompleteness
-    the relevant candidate/dimension is not expressible in U_t at all
+syntax members       77
+semantic classes      6
+d                      2
+max depth              2
 ```
 
-These require different interventions and must not inherit one another's evidential credit.
+The certificate and literal fixtures are under [`certificate/`](certificate/).
 
-## Accessibility assay — executed result
+Permanent guardrail:
 
-The v1 accessibility experiment used the frozen, future-blind structural resistance relation over the literal certified 77-member syntax universe, with the preregistered threshold `τ = 3`.
+> **Complete over the declared DSL does not imply complete over representation space.**
 
-The execution found:
+The certified universe supports exact finite comparisons inside `U`; it does not establish that every causally relevant representation is expressible in `U`.
+
+# Frozen scientific ladder
+
+## v1 — Semantic equivalence ≠ outgoing transition geometry
+
+Frozen result:
 
 ```text
-semantic-equivalent pairs:                       759
-full resistance-profile divergence:              759 / 759
-thresholded reachable-set divergence (τ = 3):   755 / 759
-weighted divergence without set divergence:        4 / 759
+semantic-equivalent pairs                       759
+full outgoing-profile divergence             759 / 759
+reachable-set divergence at tau=3            755 / 759
+profile-only divergence                         4 / 759
 ```
 
-Across all `77 × 76 = 5852` ordered non-identical syntax pairs, `1884` were asymmetric under the preregistered directed relation.
-
-Therefore the preregistered alternative is supported:
+Supported finite statement:
 
 > **Within the certified finite Boolean universe, semantic equivalence does not imply equivalence of outgoing transition geometry under the preregistered structural resistance relation.**
 
-The stronger thresholded observation is also supported:
+Authority:
 
-> **At `τ = 3`, semantically equivalent representations can have different thresholded reachable sets.**
+- [`ACCESSIBILITY_PREREGISTRATION.json`](ACCESSIBILITY_PREREGISTRATION.json)
+- [`RECORDED_ACCESSIBILITY_EXECUTION.json`](RECORDED_ACCESSIBILITY_EXECUTION.json)
+- [`ACCESSIBILITY_EXECUTION_PROVENANCE.md`](ACCESSIBILITY_EXECUTION_PROVENANCE.md)
+- canonical result SHA-256: `c7cce848ebfcd064c4579085ffd4980ade0e27e9f18e9c1dcf4cbf1120a7ecc8`
 
-This is a finite, relation-relative result. It does not establish that the resistance relation is intrinsic or uniquely correct, that accessibility predicts future outcomes, that accessibility causes behavior, or that the certified finite universe is complete over representation space.
+Ceiling: finite and relation-relative; no intrinsic geometry, future prediction, behavioral causality, or representation-space completeness.
 
-The complete execution record and provenance are frozen in [`RECORDED_ACCESSIBILITY_EXECUTION.json`](RECORDED_ACCESSIBILITY_EXECUTION.json) and [`ACCESSIBILITY_EXECUTION_PROVENANCE.md`](ACCESSIBILITY_EXECUTION_PROVENANCE.md).
+## v2 — Separation survives resistance-convention pressure
 
-## Resistance robustness assay — executed result
-
-A separate preregistered robustness fork asked only:
-
-> **Does semantic-equivalent separation persist across independently justified resistance constructions?**
-
-Three materially distinct families were frozen before execution: `R_v1` (the original directional convention), `R_unit` (unit-cost structural editing), and `R_depth` (hierarchy-weighted structural editing). The complete rationales, formal rules, parameters, and implementations are frozen in [`ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json`](ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json).
-
-For the same 759 semantic-equivalent pairs:
+Three frozen structural resistance families were tested:
 
 ```text
+R_v1
+R_unit
+R_depth
+```
+
 Full-profile separation:
-  R_v1     759 / 759
-  R_unit   759 / 759
-  R_depth  759 / 759
-
-Profile Jaccard:
-  R_v1 ↔ R_unit    1.000000
-  R_v1 ↔ R_depth   1.000000
-  R_unit ↔ R_depth 1.000000
-```
-
-At the preregistered common threshold `τ = 3`:
 
 ```text
-Reachability separation:
-  R_v1     755 / 759
-  R_unit   755 / 759
-  R_depth  759 / 759
-
-Reachability Jaccard:
-  R_v1 ↔ R_unit    1.000000
-  R_v1 ↔ R_depth   0.994729907773386
-  R_unit ↔ R_depth 0.994729907773386
+R_v1       759 / 759
+R_unit     759 / 759
+R_depth    759 / 759
 ```
 
-Thus every semantic-equivalent pair separates in full outgoing profile geometry under all three constructions, while the thresholded separating sets are also highly stable and the `R_v1`/`R_unit` sets coincide exactly.
-
-The narrow robustness conclusion is:
-
-> **Within the certified finite Boolean universe, semantic-equivalent separation is not confined to the original `R_v1` resistance convention in this three-family assay.**
-
-This weakens the explanation that the v1 observation was produced solely by one arbitrary cost convention. It does not establish an intrinsic or uniquely correct representational geometry.
-
-The frozen execution record and provenance are [`RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json`](RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json) and [`RESISTANCE_ROBUSTNESS_PROVENANCE.md`](RESISTANCE_ROBUSTNESS_PROVENANCE.md).
-
-## Two distinct experimental frontiers
-
-**Within-space:**
+At `tau = 3`:
 
 ```text
-U_t → R → A_t → Γ_t → I_t → held-out future
+R_v1       755 / 759
+R_unit     755 / 759
+R_depth    759 / 759
 ```
 
-asks whether transition accessibility has structure and whether that structure later constrains future transitions.
+Supported finite statement:
 
-**Space-expansion:**
+> **Semantic-equivalent separation of outgoing transition geometry is not confined to the original `R_v1` convention within this frozen three-family structural-edit assay.**
+
+Authority:
+
+- [`ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json`](ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json)
+- [`RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json`](RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json)
+- [`RESISTANCE_ROBUSTNESS_PROVENANCE.md`](RESISTANCE_ROBUSTNESS_PROVENANCE.md)
+- execution commit: [`df7bdc7`](https://github.com/bjoern-janson/representation-revision/commit/df7bdc7fb066c596d1944e9bd3731aefb601a43d)
+- workflow run: [`33764556701`](https://github.com/bjoern-janson/representation-revision/actions/runs/33764556701)
+- canonical result SHA-256: `1a73d8d15b04552eed64382cd313feb8ae9ccd50dfdb64cd82c4883cf74df148`
+
+Ceiling: robustness within a shared broad canonical-AST structural-edit ontology is not evidence for an intrinsic or uniquely correct geometry.
+
+## v3 — Declared structural-complexity control is insufficient
+
+The preregistered control exactly conditions semantic-equivalent pairs on the componentwise absolute difference of a nine-coordinate AST complexity vector:
 
 ```text
-U_t → evidence of inadequacy → U_{t+1} ⊃ U_t
+node count, depth,
+INPUT, NOT, AND, OR, XOR, EQ, NEQ counts
 ```
 
-asks whether corrective evidence can generate a representation/candidate family that was not available as a candidate beforehand.
+All 759 semantic-equivalent pairs were matched across 26 exact semantic strata. The measured profile-divergence quantity remained nonconstant within matched exact strata:
 
-The second problem is deliberately not claimed by the first.
+```text
+R_v1       11 / 26 nonconstant matched strata
+R_unit     11 / 26 nonconstant matched strata
+R_depth    10 / 26 nonconstant matched strata
+```
 
-## Two distinct experimental objects
+The all-zero complexity-difference stratum is among the nonconstant strata.
 
-**Historical assay:** three hand-declared `GeneratorSpec` candidates. Its execution is retained unchanged as prior evidence.
+Supported finite statement:
 
-**Operational assay:** 77 certified Boolean AST candidates partitioned into 6 semantic classes. It has a frozen certificate and preregistration, but no operational causal execution has been performed.
+> **Within the certified finite universe and frozen resistance families, the declared pairwise structural-complexity difference vector is insufficient to determine the measured magnitude of outgoing-profile divergence.**
 
-**Accessibility assay:** a frozen future-blind resistance relation over the same certified 77 syntax members. Its v1 execution is complete and its cross-resistance robustness fork has also been executed. No future prediction or open-ended representation discovery is part of either rung.
+Authority:
 
-The operational certificate is **not** retrofitted into the historical result.
+- [`ACCESSIBILITY_COMPLEXITY_PREREGISTRATION.json`](ACCESSIBILITY_COMPLEXITY_PREREGISTRATION.json)
+- scientific source: [`0eead840`](https://github.com/bjoern-janson/representation-revision/commit/0eead840a1fc2f5de96d809b5e7b45ee14f7d726)
+- custody workflow state: [`47e43281`](https://github.com/bjoern-janson/representation-revision/commit/47e432817f1e7791d70e16cc08263bd28f583151)
+- custody run: [`33775722525`](https://github.com/bjoern-janson/representation-revision/actions/runs/33775722525)
+- 32 tests passed before execution
+- raw result SHA-256: `2ae420019c41bbce43e8e34246d787b26475dc5f3b86f197e01b516ca0b07f72`
+- archived evidence ZIP SHA-256: `cfa296287b4484d5ed5c13f2d9536032426ee0a38abad1ee101bf9cad094326c`
 
-## Provenance
+Ceiling: the declared complexity control is insufficient for this measured quantity. v3 does not establish intrinsic geometry, semantic causality, temporal organization, prediction, behavior, or candidate-space expansion.
 
-The authoritative scientific source baseline is [`main@df450d91`](https://github.com/bjoern-janson/representation-revision/commit/df450d91d0b3acdd1c0937bd5d8b20bda98b20b4).
+## Γ ordering v1 — Fixed transition multiset ≠ fixed ordered functional
 
-The certificate-containing state derives from that baseline. The certificate records the source commit/tree and fixture hashes explicitly.
+Γ was opened as a separate scientific object after v3. It does not reinterpret v3.
 
-The accessibility execution record has canonical JSON SHA-256:
+For an eligible motif with center `c` and three distinct semantically equivalent leaves, the exact null ensemble is all six permutations:
 
-`c7cce848ebfcd064c4579085ffd4980ade0e27e9f18e9c1dcf4cbf1120a7ecc8`
+```text
+(c, pi_1, c, pi_2, c, pi_3, c),   pi in S3
+```
 
-The resistance robustness execution record has canonical JSON SHA-256:
+Every permutation preserves the same directed transition multiset, identities, visit counts, start/end state, and frozen resistance objects.
 
-`1a73d8d15b04552eed64382cd313feb8ae9ccd50dfdb64cd82c4883cf74df148`
+The preregistered statistic was:
 
-## Local verification
+```text
+L_k(i,j) = sum_r |R_k(G_i,G_r) - R_k(G_j,G_r)|
+Q_k      = sum_(t=0)^4 L_k(G_t,G_(t+2))
+```
 
-The project targets Python 3.11+ and uses pytest:
+Primary rule:
+
+```text
+common_positive_motifs > 0
+```
+
+Frozen result:
+
+```text
+eligible motifs                  116,664
+common-positive motifs           116,475
+primary criterion                SATISFIED
+```
+
+Per family:
+
+```text
+R_v1       116,475 order-sensitive motifs
+R_unit     116,475
+R_depth    116,592
+```
+
+Supported finite statement:
+
+> **Within the certified finite Boolean universe, there exists a semantically invariant, exactly transition-matched composable thread for which the preregistered second-order outgoing-profile displacement depends on transition ordering across all three frozen resistance conventions.**
+
+Authority:
+
+- [`GAMMA_PREREGISTRATION.md`](GAMMA_PREREGISTRATION.md)
+- [`GAMMA_ORDERING_PREREGISTRATION.json`](GAMMA_ORDERING_PREREGISTRATION.json)
+- scientific source: [`389969e5`](https://github.com/bjoern-janson/representation-revision/commit/389969e510446450684402be3c1df4ececcf0ed7)
+- custody run: [`33844036424`](https://github.com/bjoern-janson/representation-revision/actions/runs/33844036424)
+- [`GAMMA_ORDERING_RESULT.json`](GAMMA_ORDERING_RESULT.json)
+- [`GAMMA_ORDERING_ADJUDICATION.md`](GAMMA_ORDERING_ADJUDICATION.md)
+- raw result SHA-256: `abc55c8d63f055e9681b6feeef926f8bbe9e026368d974f3f0fbb18b70ca01f5`
+- archived evidence ZIP SHA-256: `888be3d02498d89233a2223cecf0bdb45328bcdabe42e08e9e2177ec104e63b5`
+
+Permanent ceiling:
+
+```text
+ordering / adjacency sensitivity
+    != orientation
+    != arrow of time
+    != causality
+    != adaptation
+    != candidate-space expansion
+```
+
+## Γ post-hoc algebraic explanation — non-authority-expanding
+
+After the primary result and adjudication were frozen, Γ was reduced exactly.
+
+For:
+
+```text
+Gamma = (c,a,c,b,c,d,c)
+```
+
+because `L_k(c,c)=0`:
+
+```text
+Q_k(a,b,d) = L_k(a,b) + L_k(b,d)
+```
+
+Across `S3`, the six permutations therefore collapse into three reversal-paired two-edge path sums. Exactly:
+
+```text
+Q_k nonconstant over S3
+    iff
+L_k(a,b), L_k(a,d), L_k(b,d) are not all equal.
+```
+
+Thus Γ positivity is equivalent, family by family, to the leaf triple being non-equilateral under the declared static `L_k` relation.
+
+This explains the positive result without adding a temporal state variable or latent dynamic mechanism:
+
+```text
+static L_k relation + ordering -> Q_k
+```
+
+Authority:
+
+- [`GAMMA_POSTHOC_ALGEBRAIC_CHARACTERIZATION.md`](GAMMA_POSTHOC_ALGEBRAIC_CHARACTERIZATION.md)
+- post-hoc explanation commit: [`18433568`](https://github.com/bjoern-janson/representation-revision/commit/18433568be5c8e211060f326140f8c6b4650e648)
+- frozen Γ closure: [`ad46551e`](https://github.com/bjoern-janson/representation-revision/commit/ad46551e8ce4758e8608738007380a604e77eaf9)
+
+The post-hoc explanation **tightens** the interpretation; it does not replace the preregistered result and cannot enlarge its authority.
+
+# STOP
+
+```text
+v1  semantic equivalence != outgoing transition geometry
+ ↓
+v2  separation survives three frozen resistance conventions
+ ↓
+v3  declared structural-complexity control is insufficient
+ ↓
+Γ   fixed transition multiset does not fix the ordered Q functional
+ ↓
+post-hoc algebraic reduction explains Γ from static L_k heterogeneity + ordering
+ ↓
+STOP
+```
+
+No `Γ+1`, directionality statistic, predictive interpretation, or successor temporal object is authorized by this branch.
+
+A future experiment requires a **new scientific question, new preregistration, and new authorization**.
+
+# Open frontier
+
+The unresolved scientific boundary is candidate-space construction itself:
+
+```text
+G* not in U_t
+      ?
+      ↓
+G* in U_(t+1)
+```
+
+Known non-sufficient substitutes include:
+
+```text
+selection among pre-existing candidates
+activation of a dormant constructor
+reachability change inside frozen U
+recombination inside a supplied DSL
+hidden answer with exposed hypothesis family
+ordering-sensitive composition of static relations
+```
+
+The `?` is authoritative. No upstream success may be silently composed into `U_t -> U_(t+1)`.
+
+# Custody and archival refs
+
+The machine-readable authority index is [`SCIENTIFIC_CUSTODY_MANIFEST.json`](SCIENTIFIC_CUSTODY_MANIFEST.json).
+
+**Content-addressed commit SHAs and recorded artifact hashes are authoritative.** The connected GitHub interface used for this custody pass does not expose tag creation or branch-protection mutation, so the following `archive/*` branches are convenience pointers only:
+
+```text
+archive/v1-accessibility-result
+archive/v2-resistance-robustness-result
+archive/v3-complexity-control-source
+archive/gamma-v1-preregistration
+archive/gamma-v1-scientific-source
+archive/gamma-v1-result-adjudication
+archive/gamma-v1-posthoc-explanation
+archive/gamma-v1-closure
+```
+
+They must never override the exact SHAs recorded in the custody manifest.
+
+`freeze-gamma-ordering-v1` remains deliberately separate from `main`.
+
+# Repository map
+
+| Path | Role |
+| --- | --- |
+| [`SCIENTIFIC_CUSTODY_MANIFEST.json`](SCIENTIFIC_CUSTODY_MANIFEST.json) | Machine-readable authoritative-object and hash index |
+| [`certificate/`](certificate/) | Frozen finite Boolean universe and verifier |
+| [`ACCESSIBILITY_PREREGISTRATION.json`](ACCESSIBILITY_PREREGISTRATION.json) | v1 preregistration |
+| [`RECORDED_ACCESSIBILITY_EXECUTION.json`](RECORDED_ACCESSIBILITY_EXECUTION.json) | v1 frozen observation |
+| [`ACCESSIBILITY_EXECUTION_PROVENANCE.md`](ACCESSIBILITY_EXECUTION_PROVENANCE.md) | v1 provenance / ceiling |
+| [`ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json`](ACCESSIBILITY_ROBUSTNESS_PREREGISTRATION.json) | v2 preregistration |
+| [`RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json`](RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json) | v2 frozen observation |
+| [`RESISTANCE_ROBUSTNESS_PROVENANCE.md`](RESISTANCE_ROBUSTNESS_PROVENANCE.md) | v2 provenance / ceiling |
+| [`ACCESSIBILITY_COMPLEXITY_PREREGISTRATION.json`](ACCESSIBILITY_COMPLEXITY_PREREGISTRATION.json) | v3 preregistration |
+| [`GAMMA_PREREGISTRATION.md`](GAMMA_PREREGISTRATION.md) | Γ human-readable frozen protocol |
+| [`GAMMA_ORDERING_PREREGISTRATION.json`](GAMMA_ORDERING_PREREGISTRATION.json) | Γ machine-readable protocol |
+| [`GAMMA_ORDERING_RESULT.json`](GAMMA_ORDERING_RESULT.json) | Γ frozen exhaustive observation |
+| [`GAMMA_ORDERING_ADJUDICATION.md`](GAMMA_ORDERING_ADJUDICATION.md) | Γ primary adjudication / ceiling |
+| [`GAMMA_POSTHOC_ALGEBRAIC_CHARACTERIZATION.md`](GAMMA_POSTHOC_ALGEBRAIC_CHARACTERIZATION.md) | Γ later explanatory reduction |
+| [`GAMMA_SCIENTIFIC_LEDGER.md`](GAMMA_SCIENTIFIC_LEDGER.md) | Γ authority chain and closure ledger |
+| [`PREREGISTRATION.md`](PREREGISTRATION.md) | Separate operational L2 preregistration |
+| [`OPERATIONAL_PREREGISTRATION.json`](OPERATIONAL_PREREGISTRATION.json) | Separate unfired W/C/P/E contract |
+
+# Local verification
+
+The project targets Python 3.11+:
 
 ```bash
 python -m pytest
 python scripts/run_resistance_robustness.py
+python scripts/run_structural_complexity_control.py
 ```
 
-The certificate consumer verifies the certificate and literal fixtures without calling `enumerate_universe()` during consumption.
-
-## Claim ceiling
-
-The current repository establishes certified finite candidate-space infrastructure, a historical toy generator-revision demonstration, an executed v1 accessibility result, and a three-family resistance-robustness result. The stronger operational causal proposition remains reserved for the unfired L2 assay, and the open-ended candidate-space-expansion problem remains outside the certified finite scope.
-
-No claim is made here about arbitrary representation invention, universal representation completeness, consciousness, self-reference, recursion, general intelligence, or L3 adaptation.
+The Γ scientific assay is already frozen and custodied. Do **not** rerun it merely as a documentation check; its one-shot custody execution is recorded in the manifest and adjudication.
