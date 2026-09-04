@@ -1,0 +1,120 @@
+{
+  "manifest_version": 1,
+  "status": "NON_SCIENTIFIC_CUSTODY_INDEX",
+  "scope": "Index frozen scientific objects without amending their claims or authorizing successor science.",
+  "live_branch": "freeze-gamma-ordering-v1",
+  "main_merge_authorized": false,
+  "gamma_successor_authorized": false,
+  "tagging_note": "The connected GitHub interface used for this custody pass does not expose tag creation or branch-protection mutation. Content-addressed commit SHAs are authoritative. archive/* branch refs are convenience pointers only and must not supersede the recorded SHAs.",
+  "certified_universe": {
+    "source_baseline_commit": "df450d91d0b3acdd1c0937bd5d8b20bda98b20b4",
+    "syntax_members": 77,
+    "semantic_classes": 6,
+    "certificate_blob": "663485bafe5e2da3251f5793df603dadfc30ac5c",
+    "syntax_fixture_blob": "a74165f547390a116caa47f0ea16679e54c025a8",
+    "semantic_fixture_blob": "dbeda59e6961eb7cc40672b8f336b1d62e8b793c"
+  },
+  "historical_bounded_revision": {
+    "status": "RECORDED_HISTORICAL_TOY_RESULT",
+    "result_file": "RECORDED_EXECUTION.json",
+    "provenance_file": "EXECUTION_PROVENANCE.md",
+    "boundary": "Separate historical three-generator assay; not evidence of candidate-space expansion."
+  },
+  "operational_l2": {
+    "status": "PREREGISTERED_UNFIRED",
+    "preregistration_file": "OPERATIONAL_PREREGISTRATION.json",
+    "protocol_file": "PREREGISTRATION.md",
+    "boundary": "No operational W/C/P/E causal execution is credited by the v1-v3-Gamma ladder."
+  },
+  "v1_accessibility": {
+    "status": "SUPPORTED_FROZEN",
+    "preregistration_commit": "569a8699a52ead820650210026c1e48d244d48d7",
+    "result_commit": "8740a2beb726c63700b3d8466f2b37292fce9b3f",
+    "provenance_commit": "0b23e942e670ed46844cb414c8464dc2caabf6d9",
+    "archive_ref": "archive/v1-accessibility-result",
+    "result_file": "RECORDED_ACCESSIBILITY_EXECUTION.json",
+    "provenance_file": "ACCESSIBILITY_EXECUTION_PROVENANCE.md",
+    "canonical_result_sha256": "c7cce848ebfcd064c4579085ffd4980ade0e27e9f18e9c1dcf4cbf1120a7ecc8",
+    "semantic_equivalent_pairs": 759,
+    "full_profile_separation": 759,
+    "tau3_reachability_separation": 755,
+    "claim_ceiling": "Within the certified finite Boolean universe, semantic equivalence does not imply equivalence of outgoing transition geometry under the preregistered structural resistance relation."
+  },
+  "v2_resistance_robustness": {
+    "status": "SUPPORTED_FROZEN",
+    "preregistration_commit": "2fee7f5f3bf1ff6c21ae6173d6773612fe9b672f",
+    "execution_commit": "df7bdc7fb066c596d1944e9bd3731aefb601a43d",
+    "execution_run_id": 33764556701,
+    "result_freeze_commit": "04493a86f42adc85f136b9fdb649385da0562cb9",
+    "hash_seal_commit": "f9ce07cc66c1591ebf2f38c6abfe3778317874e2",
+    "provenance_commit": "e3f8a1327f53295f017d24b8b2ec9678181a1f86",
+    "archive_ref": "archive/v2-resistance-robustness-result",
+    "result_file": "RECORDED_RESISTANCE_ROBUSTNESS_EXECUTION.json",
+    "provenance_file": "RESISTANCE_ROBUSTNESS_PROVENANCE.md",
+    "canonical_result_sha256": "1a73d8d15b04552eed64382cd313feb8ae9ccd50dfdb64cd82c4883cf74df148",
+    "full_profile_separation": {
+      "R_v1": 759,
+      "R_unit": 759,
+      "R_depth": 759
+    },
+    "claim_ceiling": "Semantic-equivalent outgoing-profile separation is not confined to the original R_v1 convention within the frozen three-family structural-edit assay."
+  },
+  "v3_structural_complexity_control": {
+    "status": "SUPPORTED_FROZEN_HISTORICAL",
+    "preregistration_commit": "87daec7cfdfbd71883251a78ada2b95f3acefa4d",
+    "scientific_source_commit": "0eead840a1fc2f5de96d809b5e7b45ee14f7d726",
+    "archive_ref": "archive/v3-complexity-control-source",
+    "custody_workflow_repository_commit": "47e432817f1e7791d70e16cc08263bd28f583151",
+    "custody_run_id": 33775722525,
+    "custody_job_id": 100716815861,
+    "artifact_id": 9901478202,
+    "artifact_zip_sha256": "cfa296287b4484d5ed5c13f2d9536032426ee0a38abad1ee101bf9cad094326c",
+    "raw_output_sha256": "2ae420019c41bbce43e8e34246d787b26475dc5f3b86f197e01b516ca0b07f72",
+    "pre_execution_tests": "32 passed in 0.46s",
+    "matched_semantic_strata": 26,
+    "nonconstant_matched_semantic_strata": {
+      "R_v1": 11,
+      "R_unit": 11,
+      "R_depth": 10
+    },
+    "claim_ceiling": "The declared pairwise structural-complexity difference vector is insufficient to determine measured outgoing-profile divergence magnitude within at least one exact semantic stratum for each frozen resistance family; no intrinsic geometry or temporal claim follows."
+  },
+  "gamma_ordering_v1": {
+    "status": "SUPPORTED_FROZEN_COMPLETE_RUNG",
+    "open_design_commit": "e154cd7d791a23d40463fc513e64e3d7b798d845",
+    "preregistration_commit": "05f718cba12194a42c1578f790081cc9016a151f",
+    "preregistration_archive_ref": "archive/gamma-v1-preregistration",
+    "scientific_source_commit": "389969e510446450684402be3c1df4ececcf0ed7",
+    "scientific_source_archive_ref": "archive/gamma-v1-scientific-source",
+    "custody_run_id": 33844036424,
+    "custody_job_id": 100931989081,
+    "artifact_id": 9925862074,
+    "artifact_zip_sha256": "888be3d02498d89233a2223cecf0bdb45328bcdabe42e08e9e2177ec104e63b5",
+    "raw_result_sha256": "abc55c8d63f055e9681b6feeef926f8bbe9e026368d974f3f0fbb18b70ca01f5",
+    "result_adjudication_commit": "0a648fad0ad3b23bfd4f9ecc4e8e3acaff4598ce",
+    "result_adjudication_archive_ref": "archive/gamma-v1-result-adjudication",
+    "posthoc_explanation_commit": "18433568be5c8e211060f326140f8c6b4650e648",
+    "posthoc_explanation_archive_ref": "archive/gamma-v1-posthoc-explanation",
+    "closure_commit": "ad46551e8ce4758e8608738007380a604e77eaf9",
+    "closure_archive_ref": "archive/gamma-v1-closure",
+    "eligible_motifs": 116664,
+    "common_positive_motifs": 116475,
+    "primary_rule": "common_positive_motifs > 0",
+    "primary_claim": "Within the certified finite Boolean universe, there exists a semantically invariant, exactly transition-matched composable thread for which the preregistered second-order outgoing-profile displacement depends on transition ordering across all three frozen resistance conventions.",
+    "posthoc_characterization": "Q_k(a,b,d)=L_k(a,b)+L_k(b,d); Q_k is nonconstant over S3 iff the three static pairwise L_k values are not all equal.",
+    "permanent_boundary": "ordering/adjacency/middle-position sensitivity != orientation != causality != adaptation != candidate-space expansion",
+    "successor": "NOT_AUTHORIZED"
+  },
+  "open_frontier": {
+    "expression": "G* notin U_t ?-> G* in U_(t+1)",
+    "status": "OPEN_NOT_DEMONSTRATED",
+    "known_non_sufficient_substitutes": [
+      "selection among pre-existing candidates",
+      "activation of a dormant constructor",
+      "reachability change inside a frozen universe",
+      "recombination inside a supplied DSL",
+      "hidden answer with exposed hypothesis family",
+      "ordering-sensitive composition of static relations"
+    ]
+  }
+}
